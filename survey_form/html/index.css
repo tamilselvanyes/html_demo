@@ -1,0 +1,63 @@
+body{
+    background-color:white;
+}
+.box{
+    padding: 40px 0px;
+    border-top: 20px;
+    border: 2px solid;
+}
+.rectanglebox{
+    height: 40px;
+    width: 500px;
+    border: 3px solid;
+    margin:auto;
+}
+.heading{
+    text-align: center;
+    margin-bottom: 15px;
+}
+.box-content{
+    border: 3px solid;
+    margin: 30px 0px;
+
+}
+
+.rectangle{
+    height: 130px;
+    width: 100px;
+    border: 2px solid;
+    border-color: black;
+    margin-bottom: 20px ;
+    
+}
+.oval {
+height: 100px;
+width: 75px;
+border: 2px solid;
+border-color: black;
+background-color: white;
+border-radius: 50%;
+margin: 15px 10px;
+padding: 5px 10px;
+}
+.image-text {
+padding: 30px 5px;
+margin-bottom: 20px;
+}
+
+.seat{
+    margin-top: 15px;
+}
+.class{
+    margin: 30px 25px;
+}
+.booknow{
+    margin: 20px 5px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.date{
+    overflow: hidden;
+    white-space: nowrap;
+    padding-right: 5px;
+}
