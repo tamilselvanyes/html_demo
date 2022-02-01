@@ -56,3 +56,23 @@
   width:100px;
   margin-bottom: 20px;
 }
+
+input{
+  margin: 5px;
+}
+
+.addnew-movie{
+  border: 1px solid ;
+  border-radius: 5%;
+  height:300px;
+  width:350px;
+  display:flex;
+  margin:10px;
+}
+
+.addtext{
+  color: rgb(91, 44, 111 );
+  margin-top:100px;
+  font-family: 'Fira Sans', sans-serif;
+}
+

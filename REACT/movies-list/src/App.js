@@ -1,7 +1,8 @@
 import {useState} from 'react';
 
 export default function App() {
-  const value = [
+  
+  const [value , setvalue] = useState([
     {
       name: "The Shawshank Redemption",
       image: "https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg",
@@ -50,16 +51,51 @@ export default function App() {
       director: "Adam McKay",
       cast:"	Ryan Gosling, Rudy Eisenzopf, 		Casey Groves, 	Charlie Talbert, Harold Gervais"
     }
-  ];
+  ]);
+  console.log(value)
+  const newmovie = {}
+  console.log(newmovie);
+ 
   return (
     <div className="App">
-      <h1>People's Favorite</h1>
+      <h1>Favorite Movies</h1>
       <div className="container">
         <div className="row">
       {value.map((nm) => (
-        <ShowMovieList name={nm.name} image={nm.image} summary={nm.summary} rating={nm.rating} director ={nm.director} cast ={nm.cast}/>
+
+        <ShowMovieList key = {nm.name} name={nm.name} image={nm.image} summary={nm.summary} rating={nm.rating} director ={nm.director} cast ={nm.cast}/>
       ))}
       </div>
+    </div>
+    <div className="addnew-movie">
+    
+    <h3 className = "addtext">Add your favorite movie</h3>
+    <form>
+      <input type="text" id ="name" onChange = {(event) => newmovie.name = `${event.target.value}`} placeholder="Enter Movie name"></input><br></br>
+     <input type = "text" id = "image" onChange = {(event) => newmovie.image =`${event.target.value}`} placeholder="Enter poster link"></input><br></br>
+      <input type = "text"  id ="summary" onChange = {(event) => newmovie.summary = `${event.target.value}`} placeholder="Enter summary"></input><br></br>
+      <input type = "text" id = "rating" onChange = {(event) => newmovie.rating = `${event.target.value}`} placeholder="Enter rating"></input><br></br>
+      <input type="text" id = "director" onChange = {(event) => newmovie.director =`${event.target.value}`} placeholder="Enter director name"></input><br></br>
+      <input type = "text" id = "cast" onChange = {(event) => newmovie.cast = `${event.target.value}`} placeholder="Enter cast details"></input><br></br>
+     
+      <button type="button" id ="addbutton"  className = "btn btn-success" onClick = {()=>{
+        if(document.getElementById('name') != null)
+          newmovie.name = document.getElementById('name').value;
+        if(document.getElementById('image') != null)
+          newmovie.image = document.getElementById('image').value;
+        if(document.getElementById('summary') != null)
+          newmovie.summary = document.getElementById('summary').value;
+        if(document.getElementById('rating') != null)
+          newmovie.rating = document.getElementById('rating').value;
+        if(document.getElementById('director') != null)
+          newmovie.director = document.getElementById('director').value;
+          if(document.getElementById('cast') != null)
+          newmovie.cast = document.getElementById('cast').value;
+        setvalue([...value, newmovie]);
+      }
+      }> Add Movie to the list</button>
+
+    </form>
     </div>
     </div>
   );
@@ -100,4 +136,6 @@ function ShowMovieList({ name, image , summary, rating, director, cast }) {
       </div>
       
   );
+  
 }
+
