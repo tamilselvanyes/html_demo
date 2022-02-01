@@ -1,0 +1,116 @@
+.main_body{
+    background-color: whitesmoke;
+    position:absolute;
+    top: 10%;
+    left: 30%;
+}
+
+.required:after {
+    content:" *";
+    color: red;
+  }
+  #last{
+       margin-left: 20px;
+       width: 215px ;
+  }
+  #email{
+      width: 450px;
+  }
+  #first{
+      width: 215px ;
+  }
+
+  .rating {
+    display: inline-block;
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    font-size: 50px;
+  }
+  
+  .rating label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    cursor: pointer;
+  }
+  
+  .rating label:last-child {
+    position: static;
+  }
+  
+  .rating label:nth-child(1) {
+    z-index: 5;
+  }
+  
+  .rating label:nth-child(2) {
+    z-index: 4;
+  }
+  
+  .rating label:nth-child(3) {
+    z-index: 3;
+  }
+  
+  .rating label:nth-child(4) {
+    z-index: 2;
+  }
+  
+  .rating label:nth-child(5) {
+    z-index: 1;
+  }
+  
+  .rating label input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+  
+  .rating label .icon {
+    float: left;
+    color: transparent;
+  }
+  
+  .rating label:last-child .icon {
+    color:rgb(191, 217, 226);
+  }
+  
+  .rating:not(:hover) label input:checked ~ .icon,
+  .rating:hover label:hover input ~ .icon {
+    color:yellow;
+  }
+  
+  .rating label input:focus:not(:checked) ~ .icon:last-child {
+    color:rgb(191, 217, 226);
+    text-shadow: 0 0 5px yellow;
+  }
+
+ th, td{
+      align-content: center;
+      text-align: center;   
+  }
+  .table_1{
+      table-layout: fixed;
+      width: 60%;
+      height: 150px;
+  }
+  input[type=radio]{
+    border: 0px;
+    width: 100%;
+    height: 1.1em;
+  }
+
+.table_2{
+    table-layout: fixed;
+    width: 60%;
+    height: 200px;
+}
+
+.suggestion{
+    width: 60%;
+    height: 100px;
+}
+  
+
+  

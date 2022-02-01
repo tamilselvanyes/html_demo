@@ -2,9 +2,11 @@ body{
     background-color:white;
 }
 .box{
+    width: fit-content;
+    height: fit-content;
     padding: 40px 0px;
-    border-top: 20px;
-    border: 2px solid;
+    border: 3px solid;
+    margin: auto;
 }
 .rectanglebox{
     height: 40px;
@@ -40,10 +42,6 @@ border-radius: 50%;
 margin: 15px 10px;
 padding: 5px 10px;
 }
-.image-text {
-padding: 30px 5px;
-margin-bottom: 20px;
-}
 
 .seat{
     margin-top: 15px;
@@ -60,4 +58,8 @@ margin-bottom: 20px;
     overflow: hidden;
     white-space: nowrap;
     padding-right: 5px;
+}
+.image_icon{
+    margin-top: 25px;
+    margin-left: 10px;
 }

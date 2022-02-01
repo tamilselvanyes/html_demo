@@ -1,0 +1,59 @@
+.header_div{
+    margin: 5px;
+    
+    
+
+}
+.heading{
+    text-align: center;
+    color:red;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 50px;
+    font-weight: bolder;
+    
+}
+.fa{
+    color:red;
+}
+
+.btn-primary{
+    margin: 15px;
+}
+
+#social{
+    margin-top: 15px;
+}
+
+#row_2{
+    height: 600px;
+    width: 100%;
+    background-image: url('recipe_2.jpg');
+    background-position: center center;
+    background-attachment: fixed;
+    
+}
+.search_text{
+    
+    font-size: 40px;
+    color: black;
+    font-weight: bolder; 
+    height: 50px;
+    margin-top: 100px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: block;
+   
+}
+.form-control{
+    
+    max-width: 500px;
+    margin-top: 30px;
+
+}
+.top_picks{
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: bolder;
+}
+#ingredient_1{
+    text-align: justify;
+}

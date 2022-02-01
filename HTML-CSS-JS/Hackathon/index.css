@@ -1,0 +1,77 @@
+body{
+    background-color: rgb(221, 227, 230);
+    
+}
+
+
+h1{
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color:black;    
+    text-shadow: 2px 2px 5px rgb(255, 196, 0);
+
+    position: relative;
+    animation-name: movement;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-direction: alternate-reverse;  
+        
+}
+
+@keyframes movement {
+    0%   {color:rgb(0, 217, 255); left:0px; top:0px;}
+    20%  {color:rgb(192, 61, 51); left:0px; top:-40px;}
+    40%  {color:rgb(99, 99, 79); left:-200px; top:0px;}
+    60%  {color:rgb(187, 115, 181); left:200px; top:0px;}
+    80%  {color:rgb(102, 179, 102); left:0px; top:50px;}
+    100% {color:rgb(199, 128, 128); left:0px; top:0px;}
+  }
+
+.search_div{
+    text-align: center;
+}
+
+
+.form-control {
+    max-width:600px;
+    height:50px;
+    display: inline-block;
+    font-size:20px;
+}
+
+.btn-primary{
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    margin-bottom:6px;
+    
+    
+}
+
+
+
+.title{
+    font-size:20px
+}
+
+.col-md-3{
+    margin-top:25px;
+
+}
+
+.result{
+    font-size:22px;
+    font-weight:bold;
+
+}
+
+.container-lg{
+    margin-top:20px;
+}
+
+.end_credits{
+    font-size: 20px;
+    text-align:center;
+    font-weight: bold;
+}

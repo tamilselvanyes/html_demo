@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Waala</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel = "stylesheet" href="index.css">
+
+</head>
+<body>
+    <script src="script.js"></script>
+
+
+    <!--1st row starts here-->
+    <div class="header_div">
+        <div class="container-fluid">
+            <div class = "row">
+                <div class = "col-sm-2">
+                    <button class="btn btn-primary">Login/Signup</button>
+                </div>
+                <div class = "col-sm-7">
+                    <p class="heading">Recipe Waala</p>
+                </div>
+                <div class = "col-sm-3">
+                    <div class="container" id="social">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h3 style="text-align:center;">Follow</h3>
+                            </div>
+                            <div class="col-sm-2">
+                                <i style = "padding-right: 4px;" class="fa fa-facebook fa-2x"></i> 
+                            </div>
+                            <div class="col-sm-2">
+                                <i class="fa fa-twitter fa-2x" ></i>
+                            </div>
+                            <div class="col-sm-2">
+                                <i class="fa fa-instagram fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--2nd row starts here-->
+    <div class="container-fluid">
+        <div class="row" id="row_2">
+            <div class="col-sm-6"></div>
+            <div class="col-sm-6">
+            <span class="search_text">Find a Recipe</span>
+            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+            </div>
+        </div>
+    </div>
+
+
+<!--3rd row starts here-->
+
+
+    <div>
+        <span class="top_picks">Top picks for you</span>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="image">
+                        <img id = "image_1"></img> <br>
+                        <span><b>Name: </b></span>
+                        <span id="name_1"></span> <br>
+                        <span><b>Cuisine: </b></span>
+                        <span id ="cuisine_1"></span>
+                        <h5>Ingredients</h5>
+                        <p id="ingredient_1"></p>
+                        <span><b>Calories: </b></span>
+                        <span id="calories_1"></span> <br>
+                        <span><b>Meal type: </b></span>
+                        <span id="mealtype_1"></span> <br>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+
+
+
+</body>
+</html>

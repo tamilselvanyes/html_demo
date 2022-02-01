@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel = "stylesheet" href="index.css">
+    <style>
+        table,
+        th, 
+        td{
+             border: 1px solid black;
+             border-collapse: collapse;
+        }
+</style>
+
+</head>
+<body>
+    <p class ="question">3. Design a contact us form with all fields as required</p>
+    <div class = "box">
+        <form>
+        <div class = heading>
+            <h2 style="color: white; text-align: center;">Contact Us</h2>
+        </div>
+       
+            <label for="first_name"> Name * </label> <br>
+            <input type="text" id:"first_name" name="first_name" placeholder="First name" required> 
+            <input type="text" id:"last_name" name="last_name" placeholder="Last name" required>  <br>
+    
+            <label for="email" >E-mail </label> <br>
+            <input type="text" id:"email" name="email" size="47" required> <br>
+    
+            <label for="message" >Message </label> <br>
+            <input type="text" id:"message" name:"message" size="47" required> <br>
+            <input type="submit">
+        </form>
+    </div>
+
+
+        <p class ="question">4.Use certain HTML elements to display the following in a HTML page.</p>
+    
+    <ul>
+        <li>Programming Language
+            <ul>
+                <li>Java Script
+                    <ol type="a">
+                        <li>Angular</li>
+                        <li>React</li>
+                        <li>Vue.js</li>
+                    </ol>
+                </li>
+                <li>Phython
+                    <ol type="a">
+                        <li>Django Framework</li>
+                        <li>Flash Framework</li>
+                    </ol>
+                </li>
+                <li>Java
+                    <ol type="a">
+                        <li>Spring</li>
+                        <li>Maven</li>
+                        <li>Hibernate</li>
+                    </ol>
+                </li>
+
+            </ul>
+        </li>
+        <li>Database
+            <ul>
+                <li>MySql</li>
+                <li>MangoDB</li>
+                <li>Cansandra</li>
+            </ul>
+        </li>
+      </ul> 
+
+
+      <p class ="question"> 5. Create an element that helps you to open the https://google.com in separate new tab.</p>
+    <a href="https://google.com" target="_blank">Google</a> <br>
+    
+
+
+
+    <p class ="question"> 6. In the form, add two radio buttons with grouping them for employee type(Salaried and own business</p>
+    <input type="radio" id="salaried"value="Salaried">
+    <label for="salaried">Salaried</label><br>
+    <input type="radio" id="business" value="business">
+    <label for="business">Business</label><br>
+
+
+    <p class ="question">7. Design form shown in the link</p>
+    <div class = "box_1" style="border: 4px solid;">
+        <h3 style="background-color: red; color: white;">Yes! I want to subscribe to Mag-0-Zine</h3>
+        <input type="text" id:"first_name" name="first_name"  required> 
+        <input type="text" id:"last_name" name="last_name" style="margin-left: 85px;"required>  <br>
+        <label for="first_name"> First Name </label> 
+        <label for="last_name" style="margin-left: 200px;"> Last Name </label>
+        <input type = "text" id:"address" size= "57" required> <br>
+        <label for:"address"> Address</label> <br>
+        <input type="text" id:"city" name="city" size ="13" required> 
+        <input type="text" id:"state" name="state" style="margin-left: 25px;"" size ="13" required>
+        <input type="text" id:"zip" name="zip" style="margin-left: 25px;"  size ="13" required> <br>
+        <label for:"city"> City</label>
+        <label for:"state" style="margin-left: 132px;"> State</label>
+        <label for:"zip" style="margin-left: 132px;"> Zip</label>
+        <p style="font-size:medium;"><span><b>Subscribe for</b></span>
+            <input type="checkbox" style="margin-left: 50px;" id:"one_year">
+            <label for="one_year"><b>1 year ($19.95)</b></label>
+            <input type="checkbox" style="margin-left: 50px;" id: "two_year"> 
+            <label for="two_year" ><b>2 year ($35.00)</b></label>
+        </p>
+        <p style="font-size:medium;"><b>Send me more infromation about:</b> <br>
+        <input type="checkbox" id:"computer">
+        <label for="computer"><b>Computer-Zine</b></label> <br>
+        <input type="checkbox" id:"fishing">
+        <label for="fishing"><b>Fishing-Zine</b></label> <br>
+        <input type="checkbox" id:"cat">
+        <label for="cat"><b>Cat-O-Zine</b></label> 
+    </p>
+</div>
+
+
+<p class ="question">8.Use the table tag to design given image</p>
+ <div>
+    <table style="text-align: center;">
+        <thead>
+            <tr>
+                <th>State of Health</th>
+                <th colspan="2">Fasting Value</th>
+                <th>After Remaining</th>
+            </tr>
+
+            <tr>
+                <th></th>
+                <th>Minimum</th>
+                <th>Normal</th>
+                <th>2 hours of Eating</th>
+            </tr>
+        </thead>
+        <tbody>
+           <tr>
+               <td>healthy</td>
+               <td>70</td>
+               <td>100</td>
+               <td>less than 140</td>
+           </tr> 
+           <tr>
+            <td>Pre Diabetes</td>
+            <td>101</td>
+            <td>126</td>
+            <td>140 to 200</td>
+        </tr>
+        <tr>
+            <td>Diabetes</td>
+            <td>more than 126</td>
+            <td>Not applicatble</td>
+            <td>More than 200</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+    
+
+
+<p class ="question">9. snippet to show default values for all Form elements.</p>
+    <div style="margin-top: 20px;">
+        <form >
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname" value="Brock"><br><br>
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname" value="Lesnar"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+
+    <p class ="question">10. In your, HTML page add the below line and Highlight it without using any CSS.</p>  
+    <p><mark class="mark">HTML & CSS is awesome</mark></p>
+
+    <p class ="question">11. Create an HTML page, which should contain all types of input elements.</p>  
+    <div style="margin-top: 20px;">
+        <form >
+            <label for="button">Press button</label>
+            <input type="button" id="button"><br>
+            <input type="checkbox">
+            <label for="checkbox">Choose option</label> <br> 
+            <label for="color">Choose Color</label>
+            <input id= "color" type = "color"> <br>
+            <label for="data">Date of Birth</label>
+            <input id= "date" type = "date"> <br>
+            <label for="file">Upload File</label>
+            <input id= "file" type = "file"> <br>
+            <label for="range">Choose range</label>
+            <input id= "range" type = "range"> <br>
+            <label for="password">Password</label>
+            <input id= "password" type = "password"> <br>
+            <input id= "radio" type = "radio"> 
+            <label for="radio">Radio option</label> <br>
+            <label for="month">Month</label>
+            <input id= "month" type = "month"> <br>
+            <label for="hidden">Hidden Text box</label>
+            <input id= "hidden" type = "hidden"> <br>
+
+
+
+        </form>
+    </div>
+    
+    
+</body>
+</html>

@@ -1,0 +1,50 @@
+body{
+    background-color: rgb(174, 214, 241 );
+}
+.container-fluid{
+    background-color: rgb(133, 146, 158 );
+
+}
+
+.btn-secondary{
+    margin-top: 10px;
+
+}
+
+.form-control {
+    max-width:600px;
+    height:50px;
+    display: inline-block;
+    font-size:20px;
+}
+
+.btn-primary{
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    margin-bottom:6px;
+    
+}
+
+.search_div{
+    margin-top:20px;
+    text-align: center;
+}
+
+.chapter_grp{
+    color: rgb(142, 68, 173);
+}
+
+.kural{
+    color: rgb(211, 84, 0 );
+    
+}
+
+.kural_div{
+    margin-top: 20px;
+    text-align:center;
+}
+
+.description{
+    color:rgb(142, 68, 173);
+}

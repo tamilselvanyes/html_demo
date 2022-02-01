@@ -1,0 +1,67 @@
+.mainbox{
+    background-color: whitesmoke;
+}
+
+.fa{
+    color: white;
+    display: inline;
+    align-content: center;
+    
+}
+
+.heading_text{
+    color: white;
+    text-align: center;
+    display: inline;
+    font-family: monospace;
+    font-weight: bolder;
+}
+
+
+.big_box{
+    height:400px;
+    width:250px;
+    margin:auto;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    background-color: rgb(59, 58, 58);
+    border-radius: 15px;
+}
+
+.search-box{
+    background-color: rgb(59, 58, 58);
+    border-radius: 7px;
+    width: 500px;
+    margin-left: 150px;
+    margin-top: 50px;
+    color: rgb(223, 213, 213);
+    padding-left: 20px;
+    padding: auto;
+    font-family: monospace;
+
+}
+
+.three-box{
+
+    height:100px;
+    width:170px;
+    margin:auto;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    background-color: rgb(59, 58, 58);
+    border-radius: 10%;
+
+}
+
+
+.one-box{
+
+    height:150px;
+    width:650px;
+    margin:auto;
+    margin-top: 10px;
+    margin-bottom: 60px;
+    background-color: rgb(59, 58, 58);
+    border-radius: 10px;
+
+}

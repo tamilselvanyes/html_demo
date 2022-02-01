@@ -1,0 +1,20 @@
+
+#text{
+    font-size:300px;
+    text-align: center;
+    margin: center;
+    
+    
+}
+
+#gif{
+    align-items: center;
+    text-align:center;
+    margin: auto;
+    
+}
+
+.quote{
+    font-weight: bold;
+    text-align: center;
+}

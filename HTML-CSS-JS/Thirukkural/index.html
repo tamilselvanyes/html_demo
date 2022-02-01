@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel = "stylesheet" href="index.css">
+    <title>Thirukkural Search</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class = "col-md-9">
+                <h1 class = "title"> திருக்குறள் தேடல்</h1>
+            </div>
+            <div class="col-md-3">
+                <button type="button" onclick = "aboutThirukkural()" class="btn btn-secondary">About  திருக்குறள்</button>
+            </div>
+        </div>
+    </div>
+
+    <script src = "script.js"></script>
+
+    
+    <div class = "kural_div" id ="kural_div">
+        <h5 id = "search_result"></h5>
+        <div id="kural">
+            <h3 id="chapter"></h3>
+            <h4 id= "chapter_grp" class ="chapter_grp"></h4>
+            <h5 id= "line_1" class = "kural"></h5>
+            <h5 id = "line_2" class = "kural"></h5>
+            <p id="exp_tam"></p>
+        </div>
+
+        <div id="kural_eng">
+            <h3 id="chapter_eng"></h3>
+            <h4 id= "chapter_grp_eng" class ="chapter_grp"></h4>
+            <h5 id= "line_eng" class ="kural"></h5>
+            <p id ="exp_eng"></p>
+        </div>
+    </div>
+</body>
+</html>
