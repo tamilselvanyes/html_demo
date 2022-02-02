@@ -52,9 +52,14 @@ export default function App() {
       cast:"	Ryan Gosling, Rudy Eisenzopf, 		Casey Groves, 	Charlie Talbert, Harold Gervais"
     }
   ]);
-  console.log(value)
-  const newmovie = {}
-  console.log(newmovie);
+
+  
+  const [name, setName] = useState ("");
+  const [image, setImage] = useState ("");
+  const [summary, setSummary] = useState ("");
+  const [rating, setRating] = useState ("");
+  const [director, setdirector] = useState ("");
+  const [cast, setcast] = useState ("");
  
   return (
     <div className="App">
@@ -67,30 +72,28 @@ export default function App() {
       ))}
       </div>
     </div>
+
+      
+    
     <div className="addnew-movie">
     
     <h3 className = "addtext">Add your favorite movie</h3>
     <form>
-      <input type="text" id ="name" required onChange = {(event) => newmovie.name = `${event.target.value}`} placeholder="Enter Movie name"></input><br></br>
-     <input type = "text" id = "image" onChange = {(event) => newmovie.image =`${event.target.value}`} placeholder="Enter poster link"></input><br></br>
-      <input type = "text"  id ="summary" onChange = {(event) => newmovie.summary = `${event.target.value}`} placeholder="Enter summary"></input><br></br>
-      <input type = "text" id = "rating" onChange = {(event) => newmovie.rating = `${event.target.value}`} placeholder="Enter rating"></input><br></br>
-      <input type="text" id = "director" onChange = {(event) => newmovie.director =`${event.target.value}`} placeholder="Enter director name"></input><br></br>
-      <input type = "text" id = "cast" onChange = {(event) => newmovie.cast = `${event.target.value}`} placeholder="Enter cast details"></input><br></br>
+      <input type="text" id ="name" required onChange = {(event) => setName(event.target.value)} placeholder="Enter Movie name"></input><br></br>
+     <input type = "text" id = "image" onChange = {(event) => setImage (event.target.value)} placeholder="Enter poster link"></input><br></br>
+      <input type = "text"  id ="summary" onChange = {(event) => setSummary (event.target.value)} placeholder="Enter summary"></input><br></br>
+      <input type = "text" id = "rating" onChange = {(event) => setRating (event.target.value)} placeholder="Enter rating"></input><br></br>
+      <input type="text" id = "director" onChange = {(event) => setdirector (event.target.value)} placeholder="Enter director name"></input><br></br>
+      <input type = "text" id = "cast" onChange = {(event) => setcast (event.target.value)} placeholder="Enter cast details"></input><br></br>
      
       <button type="button" id ="addbutton"  className = "btn btn-success" onClick = {()=>{
-        if(document.getElementById('name') != null)
-          newmovie.name = document.getElementById('name').value;
-        if(document.getElementById('image') != null)
-          newmovie.image = document.getElementById('image').value;
-        if(document.getElementById('summary') != null)
-          newmovie.summary = document.getElementById('summary').value;
-        if(document.getElementById('rating') != null)
-          newmovie.rating = document.getElementById('rating').value;
-        if(document.getElementById('director') != null)
-          newmovie.director = document.getElementById('director').value;
-          if(document.getElementById('cast') != null)
-          newmovie.cast = document.getElementById('cast').value;
+        const newmovie ={ name: name,
+        image: image,
+        summary: summary,
+        rating: rating,
+        director: director,
+        cast:cast
+      }
 
         // Rejecting the movie if it already exists...
         for(let i = 0; i < value.length; i ++) {
@@ -116,6 +119,7 @@ export default function App() {
           document.getElementById('director').value = "";
         if(document.getElementById('cast') != null)
          document.getElementById('cast').value = "";
+         
       }
       }> Add Movie to the list</button>
 
