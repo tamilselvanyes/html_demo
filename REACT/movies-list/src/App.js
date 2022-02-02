@@ -1,8 +1,17 @@
 import {useState} from 'react';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export default function App() {
+
   
-  const [value , setvalue] = useState([
+
+  const INITIAL_MOVIES = [
     {
       name: "The Shawshank Redemption",
       image: "https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg",
@@ -35,14 +44,7 @@ export default function App() {
       director: "David Fincher",
       cast:"Jesse Eisenberg, Andrew Garfield, Armie Hammer,Justin Timberlake, Max Minghella"
     },
-    {
-      name: "The Founder",
-      image: "https://d2e111jq13me73.cloudfront.net/sites/default/files/styles/product_image_aspect_switcher_170w/public/product-images/csm-movie/the-founder-poster0.jpg?itok=SyQ7NUTA",
-      summary:"Ray, a salesman, meets the owners of McDonald's, a burger joint in Southern California. He realises the potential of the place and decides to make it the biggest restaurant business in the world.",
-      rating: "7.2",
-      director: "John Lee Hancock",
-      cast:"Michael Keaton, Nick Offerman, 	John Carroll Lynch, Linda Cardellini, B.J. Novak"
-    },
+    
     {
       name: "The Big Short",
       image: "https://m.media-amazon.com/images/M/MV5BNDc4MThhN2EtZjMzNC00ZDJmLThiZTgtNThlY2UxZWMzNjdkXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_FMjpg_UX1000_.jpg",
@@ -51,7 +53,8 @@ export default function App() {
       director: "Adam McKay",
       cast:"	Ryan Gosling, Rudy Eisenzopf, 		Casey Groves, 	Charlie Talbert, Harold Gervais"
     }
-  ]);
+  ];
+  const [value , setvalue] = useState(INITIAL_MOVIES);
 
   // useStates for name,image,summary,rating, director,cast...
   const [name, setName] = useState ("");
@@ -68,49 +71,50 @@ export default function App() {
     
       <h3 className = "addtext">Add your favorite movie</h3>
       <form>
-        <input type="text" id ="name" required onChange = {(event) => setName(event.target.value)} placeholder="Enter Movie name"></input><br></br>
-      <input type = "text" id = "image" onChange = {(event) => setImage (event.target.value)} placeholder="Enter poster link"></input><br></br>
-        <input type = "text"  id ="summary" onChange = {(event) => setSummary (event.target.value)} placeholder="Enter summary"></input><br></br>
-        <input type = "text" id = "rating" onChange = {(event) => setRating (event.target.value)} placeholder="Enter rating"></input><br></br>
-        <input type="text" id = "director" onChange = {(event) => setdirector (event.target.value)} placeholder="Enter director name"></input><br></br>
-        <input type = "text" id = "cast" onChange = {(event) => setcast (event.target.value)} placeholder="Enter cast details"></input><br></br>
-      
-        <button type="button" id ="addbutton"  className = "btn btn-success" onClick = {()=>{
-          const newmovie ={ name: name,
-          image: image,
-          summary: summary,
-          rating: rating,
-          director: director,
-          cast:cast
-        }
+      <TextField id="name" label="Enter Movie name" onChange = {(event) => setName(event.target.value)} variant="standard" />
+      <TextField id="image" label="Enter poster link" onChange = {(event) => setImage (event.target.value)} variant="standard" />
+      <TextField id="summary" label="Enter summary" onChange = {(event) => setSummary (event.target.value)} variant="standard" />
+      <TextField id="rating" label="Enter rating" onChange = {(event) => setRating (event.target.value)} variant="standard" />
+      <TextField id="director" label="Enter director name" onChange = {(event) => setdirector (event.target.value)} variant="standard" />
+      <TextField id="cast" label="Enter cast details" onChange = {(event) => setcast (event.target.value)} variant="standard" />
 
-          // Rejecting the movie if it already exists...
-          for(let i = 0; i < value.length; i ++) {
+      <Button variant="outlined" id ="addbutton"  color="success"
+          onClick = {()=>{
+            const newmovie ={ name: name,
+            image: image,
+            summary: summary,
+            rating: rating,
+            director: director,
+            cast:cast
+          }
+  
+            // Rejecting the movie if it already exists...
+            for(let i = 0; i < value.length; i ++) {
+              if(document.getElementById('name') != null)
+              if(value[i].name === document.getElementById('name').value ){
+                alert("Movie already exist");
+                return;
+              }
+            } 
+  
+            setvalue([...value, newmovie]);
+  
+  
             if(document.getElementById('name') != null)
-            if(value[i].name === document.getElementById('name').value ){
-              alert("Movie already exist");
-              return;
-            }
-          } 
-
-          setvalue([...value, newmovie]);
-
-
-          if(document.getElementById('name') != null)
-            document.getElementById('name').value = "";
-          if(document.getElementById('image') != null)
-            document.getElementById('image').value = "";
-          if(document.getElementById('summary') != null)
-            document.getElementById('summary').value = "";
-          if(document.getElementById('rating') != null)
-            document.getElementById('rating').value = "";
-          if(document.getElementById('director') != null)
-            document.getElementById('director').value = "";
-          if(document.getElementById('cast') != null)
-          document.getElementById('cast').value = "";
-
-        }
-        }> Add Movie to the list</button>
+              document.getElementById('name').value = "";
+            if(document.getElementById('image') != null)
+              document.getElementById('image').value = "";
+            if(document.getElementById('summary') != null)
+              document.getElementById('summary').value = "";
+            if(document.getElementById('rating') != null)
+              document.getElementById('rating').value = "";
+            if(document.getElementById('director') != null)
+              document.getElementById('director').value = "";
+            if(document.getElementById('cast') != null)
+            document.getElementById('cast').value = "";
+  
+          }
+        }>Add Movie to the list</Button>
 
       </form>
     </div>
@@ -142,8 +146,23 @@ function ShowMovieList({ name, image , summary, rating, director, cast }) {
       <div className="col-md-5">
       <img className="image" src={image} alt="no file"></img>
       <h1> {name} </h1>
-      <h4 className="summary-text">Summary</h4>
-      <p className="summary">{summary}</p>
+      <div>
+      <Accordion sx={{
+        backgroundColor: 'rgb(166, 172, 175  )'
+    }}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography><b>Show Summary <span Style = "color:red">(SpoilerAlert!!!)</span></b></Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>{summary}</Typography>
+        </AccordionDetails>
+      </Accordion>
+ 
+    </div>
       <div className="director">
         <span ><b>Director:</b></span>
         <span> {director}</span>
