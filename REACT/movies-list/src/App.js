@@ -71,7 +71,7 @@ export default function App() {
     
     <h3 className = "addtext">Add your favorite movie</h3>
     <form>
-      <input type="text" id ="name" onChange = {(event) => newmovie.name = `${event.target.value}`} placeholder="Enter Movie name"></input><br></br>
+      <input type="text" id ="name" required onChange = {(event) => newmovie.name = `${event.target.value}`} placeholder="Enter Movie name"></input><br></br>
      <input type = "text" id = "image" onChange = {(event) => newmovie.image =`${event.target.value}`} placeholder="Enter poster link"></input><br></br>
       <input type = "text"  id ="summary" onChange = {(event) => newmovie.summary = `${event.target.value}`} placeholder="Enter summary"></input><br></br>
       <input type = "text" id = "rating" onChange = {(event) => newmovie.rating = `${event.target.value}`} placeholder="Enter rating"></input><br></br>
@@ -91,7 +91,31 @@ export default function App() {
           newmovie.director = document.getElementById('director').value;
           if(document.getElementById('cast') != null)
           newmovie.cast = document.getElementById('cast').value;
+
+        // Rejecting the movie if it already exists...
+        for(let i = 0; i < value.length; i ++) {
+          if(document.getElementById('name') != null)
+           if(value[i].name === document.getElementById('name').value ){
+             alert("Movie already exist");
+             return;
+           }
+        } 
+
         setvalue([...value, newmovie]);
+
+
+        if(document.getElementById('name') != null)
+          document.getElementById('name').value = "";
+        if(document.getElementById('image') != null)
+          document.getElementById('image').value = "";
+        if(document.getElementById('summary') != null)
+          document.getElementById('summary').value = "";
+        if(document.getElementById('rating') != null)
+          document.getElementById('rating').value = "";
+        if(document.getElementById('director') != null)
+          document.getElementById('director').value = "";
+        if(document.getElementById('cast') != null)
+         document.getElementById('cast').value = "";
       }
       }> Add Movie to the list</button>
 

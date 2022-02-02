@@ -1,6 +1,7 @@
 .App {
   background-color: rgb(166, 172, 175  );
   text-align: center;
+
 }
 .welcome {
   font-family: "Comforter", cursive;
@@ -68,6 +69,7 @@ input{
   width:350px;
   display:flex;
   margin:10px;
+  text-align: center;
 }
 
 .addtext{
