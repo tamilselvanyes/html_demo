@@ -64,6 +64,56 @@ export default function App() {
   return (
     <div className="App">
       <h1>Favorite Movies</h1>
+      <div className="addnew-movie">
+    
+      <h3 className = "addtext">Add your favorite movie</h3>
+      <form>
+        <input type="text" id ="name" required onChange = {(event) => setName(event.target.value)} placeholder="Enter Movie name"></input><br></br>
+      <input type = "text" id = "image" onChange = {(event) => setImage (event.target.value)} placeholder="Enter poster link"></input><br></br>
+        <input type = "text"  id ="summary" onChange = {(event) => setSummary (event.target.value)} placeholder="Enter summary"></input><br></br>
+        <input type = "text" id = "rating" onChange = {(event) => setRating (event.target.value)} placeholder="Enter rating"></input><br></br>
+        <input type="text" id = "director" onChange = {(event) => setdirector (event.target.value)} placeholder="Enter director name"></input><br></br>
+        <input type = "text" id = "cast" onChange = {(event) => setcast (event.target.value)} placeholder="Enter cast details"></input><br></br>
+      
+        <button type="button" id ="addbutton"  className = "btn btn-success" onClick = {()=>{
+          const newmovie ={ name: name,
+          image: image,
+          summary: summary,
+          rating: rating,
+          director: director,
+          cast:cast
+        }
+
+          // Rejecting the movie if it already exists...
+          for(let i = 0; i < value.length; i ++) {
+            if(document.getElementById('name') != null)
+            if(value[i].name === document.getElementById('name').value ){
+              alert("Movie already exist");
+              return;
+            }
+          } 
+
+          setvalue([...value, newmovie]);
+
+
+          if(document.getElementById('name') != null)
+            document.getElementById('name').value = "";
+          if(document.getElementById('image') != null)
+            document.getElementById('image').value = "";
+          if(document.getElementById('summary') != null)
+            document.getElementById('summary').value = "";
+          if(document.getElementById('rating') != null)
+            document.getElementById('rating').value = "";
+          if(document.getElementById('director') != null)
+            document.getElementById('director').value = "";
+          if(document.getElementById('cast') != null)
+          document.getElementById('cast').value = "";
+
+        }
+        }> Add Movie to the list</button>
+
+      </form>
+    </div>
       <div className="container">
         <div className="row">
       {value.map((nm) => (
@@ -73,58 +123,6 @@ export default function App() {
       </div>
     </div>
 
-      
-    
-    <div className="addnew-movie">
-    
-    <h3 className = "addtext">Add your favorite movie</h3>
-    <form>
-      <input type="text" id ="name" required onChange = {(event) => setName(event.target.value)} placeholder="Enter Movie name"></input><br></br>
-     <input type = "text" id = "image" onChange = {(event) => setImage (event.target.value)} placeholder="Enter poster link"></input><br></br>
-      <input type = "text"  id ="summary" onChange = {(event) => setSummary (event.target.value)} placeholder="Enter summary"></input><br></br>
-      <input type = "text" id = "rating" onChange = {(event) => setRating (event.target.value)} placeholder="Enter rating"></input><br></br>
-      <input type="text" id = "director" onChange = {(event) => setdirector (event.target.value)} placeholder="Enter director name"></input><br></br>
-      <input type = "text" id = "cast" onChange = {(event) => setcast (event.target.value)} placeholder="Enter cast details"></input><br></br>
-     
-      <button type="button" id ="addbutton"  className = "btn btn-success" onClick = {()=>{
-        const newmovie ={ name: name,
-        image: image,
-        summary: summary,
-        rating: rating,
-        director: director,
-        cast:cast
-      }
-
-        // Rejecting the movie if it already exists...
-        for(let i = 0; i < value.length; i ++) {
-          if(document.getElementById('name') != null)
-           if(value[i].name === document.getElementById('name').value ){
-             alert("Movie already exist");
-             return;
-           }
-        } 
-
-        setvalue([...value, newmovie]);
-
-
-        if(document.getElementById('name') != null)
-          document.getElementById('name').value = "";
-        if(document.getElementById('image') != null)
-          document.getElementById('image').value = "";
-        if(document.getElementById('summary') != null)
-          document.getElementById('summary').value = "";
-        if(document.getElementById('rating') != null)
-          document.getElementById('rating').value = "";
-        if(document.getElementById('director') != null)
-          document.getElementById('director').value = "";
-        if(document.getElementById('cast') != null)
-         document.getElementById('cast').value = "";
-
-      }
-      }> Add Movie to the list</button>
-
-    </form>
-    </div>
     </div>
   );
 }

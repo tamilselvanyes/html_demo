@@ -1,4 +1,7 @@
 import {useState} from 'react';
+import * as React from 'react';
+import Button from '@mui/material/Button';
+
 
 export default function App() {
   const value = [
@@ -95,6 +98,7 @@ function ShowMovieList({ name, image , summary, rating, director, cast }) {
       <div className="buttons">
         <button className="btn btn-primary"onClick = {()=>setLike(like+1)}>👍{like}</button>
         <button className= "btn btn-danger" onClick = {()=>setdislike(dislike+1)}>👎{dislike}</button>
+        <Button variant="contained">Contained</Button>
       </div>
       
       </div>
