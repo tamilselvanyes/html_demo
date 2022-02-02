@@ -53,7 +53,7 @@ export default function App() {
     }
   ]);
 
-  
+  // useStates for name,image,summary,rating, director,cast...
   const [name, setName] = useState ("");
   const [image, setImage] = useState ("");
   const [summary, setSummary] = useState ("");
@@ -119,7 +119,7 @@ export default function App() {
           document.getElementById('director').value = "";
         if(document.getElementById('cast') != null)
          document.getElementById('cast').value = "";
-         
+
       }
       }> Add Movie to the list</button>
 
@@ -128,6 +128,8 @@ export default function App() {
     </div>
   );
 }
+
+
 
 function ShowMovieList({ name, image , summary, rating, director, cast }) {
 
