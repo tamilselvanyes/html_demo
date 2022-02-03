@@ -21,6 +21,7 @@
   margin-top: 5px;
   margin-right: 5px;
   text-align: center;
+  height: min-content;
 }
 
 .container{
@@ -75,3 +76,6 @@ input{
   margin:10px;
 }
 
+.btn-secondary{
+    border-radius:50%;
+}
