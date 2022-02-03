@@ -96,6 +96,11 @@ export default function App() {
                 return;
               }
             } 
+            //Movie name should be given else alert
+            if(newmovie.name === ""){
+              alert("Movie cannot be empty");
+              return;
+            }
   
             setvalue([...value, newmovie]);
   
