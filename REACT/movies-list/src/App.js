@@ -6,6 +6,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Alert from '@mui/material/Alert';
 
 export default function App() {
 
@@ -103,6 +104,7 @@ export default function App() {
             }
   
             setvalue([...value, newmovie]);
+            <Alert severity="success">Added successfully</Alert>
   
   
             if(document.getElementById('name') != null)
@@ -117,6 +119,13 @@ export default function App() {
               document.getElementById('director').value = "";
             if(document.getElementById('cast') != null)
             document.getElementById('cast').value = "";
+
+            setName("");
+            setImage("");
+            setSummary("");
+            setRating("");
+            setdirector("");
+            setcast("");
   
           }
         }>Add Movie to the list</Button>
