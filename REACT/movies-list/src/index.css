@@ -1,6 +1,5 @@
 .App {
   background-color: rgb(166, 172, 175  );
-  text-align: center;
 
 }
 .welcome {
@@ -78,4 +77,42 @@ input{
 
 .btn-secondary{
     border-radius:50%;
+}
+
+.gamebox{
+  height: 160px;
+  width:160px;
+  border:1px solid black;
+  font-size:150px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background-color:white;
+  cursor: pointer;
+}
+
+.board{
+  display:flex;
+  flex-wrap: wrap;
+  width: 480px;
+
+}
+
+.full-game{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.board-info{
+  display:flex;
+  flex-wrap: wrap;
+  padding-left: 20px;
+  align-items:center;
+}
+
+.result{
+  margin:10px;
 }
