@@ -1,0 +1,70 @@
+.App {
+  background: linear-gradient(to right, #0062E6, #33AEFF);
+  background-size: 400% 400%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  
+}
+
+@media (max-width: 900px){
+    .App{
+      flex-direction: column;
+    }
+}
+
+.chart{ 
+  border: 1px solid ;
+  background-color: white;
+  margin:10px;
+  border-radius: 1rem;
+  transition: all 0.2s;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  
+}
+
+.card-title{
+  text-align: center;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+}
+
+.price{
+  text-align: center;
+  border-bottom: 1px solid grey;
+  font-size: 3rem;
+  margin:0;
+}
+
+ul{
+  margin-top:10px;
+}
+
+
+.subscript{
+  font-size: 0.8rem !important;
+}
+
+.chart ul li {
+  margin-bottom: 1.2rem;
+}
+
+.button{
+  text-align: center;
+  width: 300px;
+  margin-bottom: 10px;
+}
+@media (min-width: 992px) {
+  .chart:hover {
+    margin-top: -.25rem;
+    margin-bottom: .25rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.3);
+  }
+
+  .chart:hover .btn {
+    opacity: 1;
+  }
+}
