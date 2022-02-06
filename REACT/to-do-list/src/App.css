@@ -1,0 +1,26 @@
+.App {
+  text-align: center;
+}
+
+.todo-div{
+  margin:20px;
+  justify-content:center;
+  
+}
+
+td{
+  text-align:center;
+}
+
+.App .btn{
+  margin:10px;
+
+}
+.completed-list{
+  text-align:left;
+}
+
+tbody .btn {
+    border-radius:20px
+}
+
