@@ -116,3 +116,8 @@ input{
 .result{
   margin:10px;
 }
+
+.scoreboard{
+  margin:10px;
+  text-align:center;
+}
