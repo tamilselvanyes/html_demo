@@ -58,7 +58,7 @@ export default function App() {
               <th>Remove</th>
             </tr>
           </thead>
-          {task_list.length > 0 ? task_list.map((item, index) => <DataCell key={index} item={item} />) : <tbody ><tr><td colspan="3">No Pending Task</td></tr></tbody>}
+          {task_list.length > 0 ? task_list.map((item, index) => <DataCell key={index} item={item} />) : <tbody ><tr><td colSpan="3">No Pending Task</td></tr></tbody>}
         </table>
 
 
@@ -109,7 +109,7 @@ export default function App() {
       <div className = "completed-list">
         <h3 >Completed Task</h3>
         <ul>
-          {list.map((item) => <li>{item}</li>)}
+          {list.map((item,index) => <li key = {index}>{item}</li>)}
         </ul>
       </div>
     );
@@ -118,6 +118,7 @@ export default function App() {
   return (
     <div className="App">
       <h1>TODO Task List Using React</h1>
+       <p>Enter the task and Add using button or Enter key, once Completed click the green it will create a list of task completed or click the red to remove the task from the list.</p>
       <input type="text" id = "task-text" className="form-control" placeholder="Type New Task" onKeyUp ={(event)=> onEnterClicked(event)} onChange={(event) => setNewTask(event.target.value)} ></input>
       <button className="btn btn-primary" onClick={() => onAddTaskClicked()}>Add Task</button>
 
