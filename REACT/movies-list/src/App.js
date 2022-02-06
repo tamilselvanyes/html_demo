@@ -31,18 +31,18 @@ export default function App() {
         <Route path="/FavoriteMovies"><FavoriteMovies /></Route>
         <Route path="/TicTacToe"><TicTacToe /></Route>
         <Route path="/AddColor"><AddColor /></Route>
-        <Route path="/">Home</Route>
+        <Route path="/"><WelcomeMsg/></Route>
 
 
 
       </Switch>
-
-
-
-
     </div>
-
-
   );
+
+  function WelcomeMsg(){
+    return (
+      <div>Welcome to My app, Navigate through other tabs and have fun.</div>
+    )
+  }
 }
 
