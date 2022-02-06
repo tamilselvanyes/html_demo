@@ -1,6 +1,8 @@
 import './App.css';
 
+
 export default function App() {
+  //Array of objects for pricing schemes
   const packages = [{
     name_user: " FREE",
     price: "$0",
@@ -55,6 +57,7 @@ export default function App() {
     <div className="App">
 
       <h1>Pricing Chart Using React</h1>
+      {/* Calling the function to display along with the props */}
       {packages.map((user, index) => <ShowPricing key={index}
         name={user.name_user}
         price={user.price}
@@ -77,6 +80,7 @@ export default function App() {
   );
 }
 
+//function object destructing...
 function ShowPricing({ name,
   price,
   users,
@@ -105,6 +109,8 @@ function ShowPricing({ name,
         <li><span className="fa-li"><i className="fas fa-check"></i></span>{storage}</li>
         <li><span className="fa-li"><i className="fas fa-check"></i></span>{public_projects}</li>
         <li><span className="fa-li"><i className="fas fa-check"></i></span>{access}</li>
+
+        {/* handling the tick and cross icon with grey and black text by conditional operator or ternary operator */}
         {
           private_projects_value === true ? <li><span className="fa-li"><i className="fas fa-check"></i></span>{private_projects}</li> :
             <li className="text-muted"><span className="fa-li"><i className="fas fa-times"></i></span>{private_projects}</li>
