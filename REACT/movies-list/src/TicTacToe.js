@@ -108,7 +108,8 @@ export function TicTacToe() {
                 </div>
             </div>
             {winner ? <h2 className="result">
-                Match {result} <Button variant="outlined" className="success" onClick={() => setBoard(INITIAL_STATES)} > Restart </Button></h2> : ""}
+                Match {result} <Button variant="outlined" className="success" onClick={() => {setBoard(INITIAL_STATES)
+                setIsXturn(true)}} > Restart </Button></h2> : ""}
         </div>
     );
 }
