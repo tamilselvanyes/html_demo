@@ -32,13 +32,6 @@
   text-align: left;
 }
 
-.cast{
-  text-align: left;
-}
-
-.director{
-  text-align: left;
-}
 
 .btn-primary {
   width: 100px;
@@ -55,19 +48,37 @@ input{
 }
 
 .addnew-movie{
-  border: 1px solid ;
-  border-radius: 5%;
-  height:350px;
-  width:350px;
   display:flex;
+  flex-direction: column;
   text-align: center;
   margin:10px;
   
 }
 
+.edit-movie{
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+  margin:10px;
+  
+}
+
+form{
+  display:flex;
+  flex-direction: column;
+}
+
+.edittext{
+  color: rgb(91, 44, 111 );
+  font-family: 'Fira Sans', sans-serif;
+  margin-top:10px;
+
+
+}
+
 .addtext{
   color: rgb(91, 44, 111 );
-  margin-top:100px;
+  margin-top:10px;
   font-family: 'Fira Sans', sans-serif;
 }
 
@@ -129,3 +140,4 @@ input{
 .error-img{
   width:100%;
 }
+

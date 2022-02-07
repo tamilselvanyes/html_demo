@@ -3,6 +3,7 @@ import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 
+
 export function FavoriteMovies({value,setvalue}) {
   
 
@@ -15,7 +16,7 @@ export function FavoriteMovies({value,setvalue}) {
         <div className="row">
           {value.map((nm,index) => (
 
-            <ShowMovieList id= {index} key={index} name={nm.name} image={nm.poster} summary={nm.summary} rating={nm.rating}
+            <ShowMovieList value ={value} setvalue ={setvalue} id= {index} key={index} name={nm.name} image={nm.poster} summary={nm.summary} rating={nm.rating}
             deleteButton = {<IconButton aria-label="delete" className = "delete-button" color ="error" onClick = {()=>{
               const copyMovieList = [...value];
               copyMovieList.splice(index,1);

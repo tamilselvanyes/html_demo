@@ -10,8 +10,9 @@ export function MovieDescription({ value }) {
   return (
     <div>
       <iframe
-        width="727"
+        width="100%"
         height="409"
+        className="movie-video"
         src={movie.trailer}
         title="YouTube video player"
         frameBorder="0"

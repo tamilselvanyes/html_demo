@@ -11,6 +11,7 @@ export function AddNewMovie({ value,setvalue}) {
   const [image, setImage] = useState("");
   const [summary, setSummary] = useState("");
   const [rating, setRating] = useState("");
+  const [trailer, setTrailer] = useState("");
   const history = useHistory();
   return (
     <div className="addnew-movie">
@@ -21,15 +22,17 @@ export function AddNewMovie({ value,setvalue}) {
         <TextField id="image" label="Enter poster link" onChange={(event) => setImage(event.target.value)} variant="standard" />
         <TextField id="summary" label="Enter summary" onChange={(event) => setSummary(event.target.value)} variant="standard" />
         <TextField id="rating" label="Enter rating" onChange={(event) => setRating(event.target.value)} variant="standard" />
-       
+        <TextField id="trailer" label="Enter trailer link" onChange={(event) => setTrailer(event.target.value)} variant="standard" />
+
 
         <Button variant="outlined" id="addbutton" color="success"
           onClick={() => {
             const newmovie = {
               name: name,
-              image: image,
+              poster: image,
               summary: summary,
               rating: rating,
+              trailer: trailer
              
             };
 
@@ -65,6 +68,7 @@ export function AddNewMovie({ value,setvalue}) {
             setImage("");
             setSummary("");
             setRating("");
+            setTrailer("");
 
           }}>Add Movie to the list</Button>
 

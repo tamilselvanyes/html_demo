@@ -5,6 +5,8 @@ import { TicTacToe } from './TicTacToe';
 import { AddNewMovie } from './AddNewMovie';
 import { useState } from 'react';
 import { MovieDescription } from './MovieDescription';
+import {EditMovie } from './EditMovie';
+import { NotFound } from './NotFound';
 
 
 
@@ -66,14 +68,6 @@ export default function App() {
       "rating": 8,
       "summary": "In the kingdom of Mahishmati, Shivudu falls in love with a young warrior woman. While trying to woo her, he learns about the conflict-ridden past of his family and his true legacy.",
       "trailer": "https://www.youtube.com/embed/sOEg_YZQsTI"
-    },
-    {
-
-      "name": "Ratatouille",
-      "poster": "https://resizing.flixster.com/gL_JpWcD7sNHNYSwI1ff069Yyug=/ems.ZW1zLXByZC1hc3NldHMvbW92aWVzLzc4ZmJhZjZiLTEzNWMtNDIwOC1hYzU1LTgwZjE3ZjQzNTdiNy5qcGc=",
-      "rating": 8,
-      "summary": "Remy, a rat, aspires to become a renowned French chef. However, he fails to realise that people despise rodents and will never enjoy a meal cooked by him.",
-      "trailer": "https://www.youtube.com/embed/NgsQ8mVkN8w"
     }
   ];
   const [value, setvalue] = useState(INITIAL_MOVIES);
@@ -102,6 +96,7 @@ export default function App() {
 
       <Switch>
         <Route path="/movies"> <Redirect to="/FavoriteMovies"></Redirect></Route>
+        <Route path="/FavoriteMovies/edit/:id"><EditMovie value={value} setvalue={setvalue} /></Route>
         <Route path="/FavoriteMovies/:id"><MovieDescription value={value} /></Route>
         <Route path="/FavoriteMovies"><FavoriteMovies value={value} setvalue={setvalue} /></Route>
         <Route path="/Addmovie"><AddNewMovie value={value} setvalue={setvalue} /></Route>
@@ -114,22 +109,11 @@ export default function App() {
     </div>
   );
 
-  function NotFound() {
-    return (
-      <div>
-        <h1>404, Page not Found</h1>
-        <img className="error-img" src="https://skat.tf/wp-content/uploads/2011/01/funny-404-error.jpg" alt="404 not found"></img>
+}
 
-      </div>
-
-    )
-  }
-
-  function WelcomeMsg() {
-    return (
-      <div>Welcome to My app, Navigate through other tabs and have fun.</div>
-    )
-  }
-
+function WelcomeMsg() {
+  return (
+    <div>Welcome to My app, Navigate through other tabs and have fun.</div>
+  )
 }
 
