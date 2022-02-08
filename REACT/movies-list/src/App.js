@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { MovieDescription } from './MovieDescription';
 import {EditMovie } from './EditMovie';
 import { NotFound } from './NotFound';
+import {ThemeSetting} from './ThemeSetting'
 
 
 
@@ -92,6 +93,9 @@ export default function App() {
         <li>
           <Link to="/TicTacToe">XO Gaming</Link>
         </li>
+        <li>
+          <Link to="/ThemeSetting">ThemeSetting</Link>
+        </li>
       </ul>
 
       <Switch>
@@ -102,6 +106,7 @@ export default function App() {
         <Route path="/Addmovie"><AddNewMovie value={value} setvalue={setvalue} /></Route>
         <Route path="/TicTacToe"><TicTacToe /></Route>
         <Route path="/AddColor"><AddColor /></Route>
+        <Route path="/ThemeSetting"><ThemeSetting /></Route>
         <Route exact path="/"><WelcomeMsg /></Route>
         <Route path="**"><NotFound /></Route>
 
