@@ -45,7 +45,7 @@ export function ShowMovieList({ name, image, summary, rating, deleteButton, id})
           <Badge badgeContent={dislike} color="error">👎</Badge>
         </IconButton>
 
-        <IconButton color="secondary" onClick={()=>
+        <IconButton color="secondary" style = {{marginLeft: "auto"}} onClick={()=>
           history.push(`/FavoriteMovies/edit/${id}`) }><EditIcon/></IconButton>
 
         {deleteButton}
