@@ -1,12 +1,20 @@
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import { useParams, useHistory } from 'react-router-dom';
-import Button from '@mui/material/Button';
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import { useParams, useHistory } from "react-router-dom";
+import Button from "@mui/material/Button";
+import { useEffect, useState } from "react";
 
-export function MovieDescription({ value }) {
+export function MovieDescription() {
+  const API =
+    "https://my-json-server.typicode.com/tamilselvanyes/movies-list-db/movies";
   const { id } = useParams();
-  console.log(id, value);
-  const movie = value[id];
+  const [movie, setMovie] = useState({});
   const history = useHistory();
+  useEffect(() => {
+    fetch(`${API}/${id}`, { method: "GET" })
+      .then((data) => data.json())
+      .then((mv) => setMovie(mv))
+      .catch((error) => console.log(error));
+  }, []);
   return (
     <div>
       <iframe
@@ -17,9 +25,8 @@ export function MovieDescription({ value }) {
         title="YouTube video player"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen>
-
-      </iframe>
+        allowFullScreen
+      ></iframe>
 
       <div className="movie-description">
         <div className="movie-specs">
@@ -27,9 +34,14 @@ export function MovieDescription({ value }) {
           <p className="movie-rating">⭐{movie.rating}</p>
         </div>
         <p className="movie-summary">{movie.summary}</p>
-        <Button variant="outlined" onClick={() => history.goBack()} startIcon={<ArrowBackIosIcon />}>Back</Button>
+        <Button
+          variant="outlined"
+          onClick={() => history.goBack()}
+          startIcon={<ArrowBackIosIcon />}
+        >
+          Back
+        </Button>
       </div>
-
     </div>
   );
 }
