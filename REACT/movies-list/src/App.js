@@ -18,7 +18,6 @@ import Paper from "@mui/material/Paper";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import SvgIcon from "@mui/material/SvgIcon";
-import {BasicForm} from "./BasicForm"
 import React from 'react';
 
 export default function App() {
@@ -137,7 +136,6 @@ export default function App() {
             </Route>
             <Route exact path="/">
               <WelcomeMsg />
-              <BasicForm/>
             </Route>
             <Route path="**">
               <NotFound />
