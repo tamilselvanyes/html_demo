@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 export function MovieDescription() {
   const API =
-    "https://my-json-server.typicode.com/tamilselvanyes/movies-list-db/movies";
+    "https://6209ed5992946600171c55b6.mockapi.io/movies";
   const { id } = useParams();
   const [movie, setMovie] = useState({});
   const history = useHistory();

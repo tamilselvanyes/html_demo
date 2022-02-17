@@ -18,6 +18,7 @@ import Paper from "@mui/material/Paper";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import SvgIcon from "@mui/material/SvgIcon";
+import {BasicForm} from "./BasicForm"
 
 export default function App() {
   const history = useHistory();
@@ -113,7 +114,7 @@ export default function App() {
               <Redirect to="/FavoriteMovies"></Redirect>
             </Route>
             <Route path="/FavoriteMovies/edit/:id">
-              <EditMovie value={value} setvalue={setvalue} />
+              <EditMovie />
             </Route>
             <Route path="/FavoriteMovies/:id">
               <MovieDescription />
@@ -122,7 +123,7 @@ export default function App() {
               <FavoriteMovies value={value} setvalue={setvalue} />
             </Route>
             <Route path="/Addmovie">
-              <AddNewMovie value={value} setvalue={setvalue} />
+              <AddNewMovie  />
             </Route>
             <Route path="/TicTacToe">
               <TicTacToe />

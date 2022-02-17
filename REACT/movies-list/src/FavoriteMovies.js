@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 export function FavoriteMovies({ value, setvalue }) {
   const API =
-    "https://my-json-server.typicode.com/tamilselvanyes/movies-list-db/movies";
+    "https://6209ed5992946600171c55b6.mockapi.io/movies";
   const getMovies = () => {
     fetch(API, {
       method: "GET",
@@ -18,7 +18,7 @@ export function FavoriteMovies({ value, setvalue }) {
   }, []);
 
   const deleteMovie = (id) => {
-    fetch(`${API}/movies/${id}`, { method: "DELETE" }).then(() => getMovies());
+    fetch(`${API}/${id}`, { method: "DELETE" }).then(() => getMovies());
   };
 
   return (
