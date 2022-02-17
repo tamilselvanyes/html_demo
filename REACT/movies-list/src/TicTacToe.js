@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import Button from '@mui/material/Button';
 import useWindowSize from 'react-use/lib/useWindowSize'
-import Confetti from 'react-confetti'
+import Confetti from 'react-confetti';
+import React from 'react';
 
 const INITIAL_STATES = [null, null, null, null, null, null, null, null, null]
 export function TicTacToe() {

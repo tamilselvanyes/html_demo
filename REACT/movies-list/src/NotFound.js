@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import { useHistory } from "react-router-dom";
+import React from 'react';
 
 export function NotFound() {
     const history = useHistory();

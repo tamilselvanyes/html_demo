@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import React from 'react';
 
 export function AddNewMovie() {
   // useStates for name,image,summary,rating...

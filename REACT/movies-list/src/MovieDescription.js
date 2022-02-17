@@ -2,6 +2,7 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { useParams, useHistory } from "react-router-dom";
 import Button from "@mui/material/Button";
 import { useEffect, useState } from "react";
+import React from 'react';
 
 export function MovieDescription() {
   const API =
