@@ -17,9 +17,8 @@ export function EditMovie() {
     })
       .then((data) => data.json())
       .then((movie) => setMovie(movie))
-      .catch((error) => console.log(error))
-  },[]);
-  
+      .catch((error) => console.log(error));
+  }, []);
 
   return (
     <div>{movie ? <EditMovieForm movie={movie} /> : <h2>Loading</h2>}</div>
@@ -72,7 +71,7 @@ function EditMovieForm({ movie }) {
           id="name"
           name="name"
           margin="dense"
-          onChange = {() => console.log("nothing")}
+          onChange={formik.handleChange}
           value={formik.values.name}
           onBlur={formik.handleBlur}
           error={formik.touched.name && formik.errors.name}
@@ -148,7 +147,7 @@ function EditMovieForm({ movie }) {
           }
         />
 
-        <Button type = "Submit" variant="outlined" id="addbutton" color="success">
+        <Button type="Submit" variant="outlined" id="addbutton" color="success">
           Save
         </Button>
       </form>
