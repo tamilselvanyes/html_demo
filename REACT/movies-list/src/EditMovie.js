@@ -12,6 +12,7 @@ export function EditMovie() {
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
+    console.log("useEffect");
     fetch(`${API}/${id}`, {
       method: "GET",
     })
@@ -26,8 +27,6 @@ export function EditMovie() {
 }
 
 function EditMovieForm({ movie }) {
-  console.log(movie);
-
   const editMovie = (updatedMovie) => {
     // 1. method must be PUT & pass id
     // 2. body - JSON data
