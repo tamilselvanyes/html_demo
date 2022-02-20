@@ -12,7 +12,7 @@ async function getPhone(name) {
 
     console.log(result);
     showData(result, name);
-    let search = document.getElementById("search");
+    let search = document.getElementById("phone-search-input");
     if (search != undefined) {
       search.value = "";
     }
@@ -34,7 +34,7 @@ async function getLatestPhone() {
 
     console.log(result);
     showData(result, "Latest Phones");
-    let search = document.getElementById("search");
+    let search = document.getElementById("phone-search-input");
     if (search != undefined) {
       search.value = "";
     }
@@ -70,7 +70,7 @@ function showData(result, text) {
   }
 
   //Clearing the search input after showing the result.
-  let element = document.getElementById("search");
+  let element = document.getElementById("phone-search-input");
   if (element != null) {
     element.value = "";
   }
@@ -120,6 +120,45 @@ function showData(result, text) {
     var title = document.createElement("span");
     title.setAttribute("id", "title" + i);
     title.setAttribute("class", "phone-title");
+
+    var icon_div = document.createElement("div");
+
+    var star_icon = document.createElement("span");
+    star_icon.setAttribute("class", "fa fa-star");
+    star_icon.setAttribute("id", `star-icon${i}`);
+
+    star_icon.addEventListener("click", () => {
+      if (document.getElementById(`star-icon${i}`).className === "fa fa-star") {
+        document
+          .getElementById(`star-icon${i}`)
+          .setAttribute("class", "fa fa-star checked");
+      } else {
+        document
+          .getElementById(`star-icon${i}`)
+          .setAttribute("class", "fa fa-star");
+      }
+    });
+
+    var cart_icon = document.createElement("i");
+    cart_icon.setAttribute("class", "fa fa-shopping-cart");
+    cart_icon.setAttribute("id", `cart-icon${i}`);
+
+    cart_icon.addEventListener("click", () => {
+      if (
+        document.getElementById(`cart-icon${i}`).className ===
+        "fa fa-shopping-cart"
+      ) {
+        document
+          .getElementById(`cart-icon${i}`)
+          .setAttribute("class", "fa fa-shopping-cart cartchecked");
+      } else {
+        document
+          .getElementById(`cart-icon${i}`)
+          .setAttribute("class", "fa fa-shopping-cart");
+      }
+    });
+
+    icon_div.append(star_icon, cart_icon);
 
     var brand_text = document.createElement("span");
     brand_text.innerHTML = "Brand: ";
@@ -221,9 +260,15 @@ function showData(result, text) {
 
     // appending
     if (text === "Latest Phones") {
-      content.append(title, accordion_showDetais);
+      content.append(title, icon_div, accordion_showDetais);
     } else {
-      content.append(title, brand_text, brand_value, accordion_showDetais);
+      content.append(
+        title,
+        icon_div,
+        brand_text,
+        brand_value,
+        accordion_showDetais
+      );
     }
 
     col.append(image, content);

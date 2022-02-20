@@ -27,6 +27,16 @@
       display:flex;
 
   }
+
+  .cartchecked{
+    color:green;
+  }
+
+  .checked {
+    color: orange;
+  }
+
+  
   
   .col-md-3{
       margin: 10px;
