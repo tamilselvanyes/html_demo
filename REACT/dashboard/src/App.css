@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color:#BFC9CA;
+  min-height: "100vh"
 }
 
 .heading-drawer{
@@ -8,4 +10,78 @@
   text-transform: uppercase;
   font-size: 12px;
   color: gray
+}
+
+.dashboard-panel{
+  margin-top:30px;
+  margin-right: 10px;
+
+}
+
+.dashboard-text-panel{
+  position: relative;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.body-dashboard-text{
+  font-size: 30px;
+  color:grey;
+}
+
+.reportbutton{
+  height: 30px;
+  background-color: #2980B9;
+  color: white;
+  margin-top:7px;  
+  display:flex;
+  align-items: center;
+  border-radius: 5px;
+}
+
+
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+  }
+  
+
+  
+.flex-container > div {
+  background-color: #f1f1f1;
+  width: 200px;
+  margin: 10px;
+  height: 80px;
+  text-align: center;
+  font-size: 15px;
+  border-radius: 5px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: center;
+
+}
+
+.dashboard-chart{
+  display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin:20px;
+  
+}
+
+.dashboard-chart1{
+
+  height: 350px;
+  width: 650px;
+  background-color:white;
+  margin: 10px;
+}
+
+.dashboard-chart2{
+  background-color:white;
+  margin: 10px;
 }
