@@ -90,6 +90,17 @@ export function MiniDrawer({ open, setOpen }) {
     setOpen(false);
   };
 
+  window.addEventListener("resize", handleResize);
+
+  function handleResize() {
+    console.log("Resize" + window.outerWidth);
+    if (window.outerWidth < 800) {
+      handleDrawerClose();
+    } else {
+      handleDrawerOpen();
+    }
+  }
+
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />

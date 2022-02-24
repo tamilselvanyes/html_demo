@@ -84,4 +84,25 @@
 .dashboard-chart2{
   background-color:white;
   margin: 10px;
+  width: 350px;
+}
+
+.dashboard-summary{
+  display:flex;
+}
+
+.summary-project{
+  height: fit-content;
+  width: 650px;
+  background-color:white;
+  margin: 10px;
+
+}
+
+.summary-illustration{
+
+  width: "fit-content";
+  background-color:white;
+  margin: 10px;
+
 }

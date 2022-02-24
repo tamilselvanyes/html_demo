@@ -18,7 +18,7 @@ import Paper from "@mui/material/Paper";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import SvgIcon from "@mui/material/SvgIcon";
-import React from 'react';
+import React from "react";
 
 export default function App() {
   const history = useHistory();
@@ -123,7 +123,7 @@ export default function App() {
               <FavoriteMovies value={value} setvalue={setvalue} />
             </Route>
             <Route path="/Addmovie">
-              <AddNewMovie  />
+              <AddNewMovie />
             </Route>
             <Route path="/TicTacToe">
               <TicTacToe />
