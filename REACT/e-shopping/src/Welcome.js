@@ -14,7 +14,7 @@ export function Welcome() {
   const message = "Welcome to my shop";
   const [products, setProducts] = useState(null);
 
-  const API = "https://fakestoreapi.com/products";
+  const API = "https://6209ed5992946600171c55b6.mockapi.io/products";
 
   const getProducts = () => {
     fetch(API, {
@@ -101,7 +101,11 @@ function ShowProducts({ product }) {
         <Button variant="contained" color="success">
           Check Out
         </Button>
-        <Button variant="contained" color="secondary">
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={() => history.push(`/edit/${product.id}`)}
+        >
           <EditIcon />
         </Button>
         <Button variant="contained" color="error">

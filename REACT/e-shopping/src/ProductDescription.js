@@ -13,7 +13,7 @@ export function ProductDescription() {
   const [product, setProduct] = useState({});
   const [wishlist, setWishlist] = useState(false);
 
-  const API = "https://fakestoreapi.com/products";
+  const API = "https://6209ed5992946600171c55b6.mockapi.io/products";
   useEffect(() => {
     fetch(`${API}/${id}`, { method: "GET" })
       .then((data) => data.json())
@@ -83,11 +83,20 @@ function RecommendedProducts({ product }) {
   const [recommendedproducts, setRecommendedProducts] = useState(null);
 
   const getRecommendedProducts = () => {
-    fetch(`${API}/category/${product.category}`, {
+    let category_products = {};
+    fetch(`${API}`, {
       method: "GET",
     })
       .then((data) => data.json())
-      .then((products) => setRecommendedProducts(products));
+      .then((products) => {
+        category_products = products.filter(
+          (products) =>
+            products.category === product.category &&
+            products.title !== product.title
+        );
+        console.log(product.category + category_products);
+        return setRecommendedProducts(category_products);
+      });
   };
 
   useEffect(() => {
@@ -112,7 +121,7 @@ function ShowRecommendProduct({ product }) {
 
   function OnProductClicked(product) {
     console.log(product);
-    history.push(`description/${product.id}`);
+    history.push(`${product.id}`);
   }
 
   return (

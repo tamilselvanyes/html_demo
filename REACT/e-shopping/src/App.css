@@ -116,3 +116,41 @@ body {
   align-items: stretch;
 }
 
+.addnew-movie{
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+  margin:10px;
+  
+}
+
+.edit-movie{
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+  margin:10px;
+  
+}
+
+form{
+  display:flex;
+  flex-direction: column;
+}
+
+.edittext{
+  color: rgb(91, 44, 111 );
+  font-family: 'Fira Sans', sans-serif;
+  margin-top:10px;
+
+
+}
+
+.addtext{
+  color: rgb(91, 44, 111 );
+  margin-top:10px;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.buttons{
+  display: flex;
+}

@@ -15,6 +15,8 @@ import React from "react";
 import { Welcome } from "./Welcome";
 import { SignIn } from "./SignIn";
 import { ProductDescription } from "./ProductDescription";
+import { AddNewProduct } from "./AddNewProduct";
+import { EditProduct } from "./EditProduct";
 import { useEffect } from "react";
 
 export default function App() {
@@ -69,6 +71,12 @@ export default function App() {
                 </Button>
                 <Button
                   color="inherit"
+                  onClick={() => history.push("/addnewproduct")}
+                >
+                  Add new Product
+                </Button>
+                <Button
+                  color="inherit"
                   style={{ marginLeft: "auto" }}
                   startIcon={
                     mode === "dark" ? <Brightness7Icon /> : <Brightness4Icon />
@@ -87,6 +95,9 @@ export default function App() {
             <Route path="/mycart">
               <Cart />
             </Route>
+            <Route path="/addnewproduct">
+              <AddNewProduct />
+            </Route>
             <Route path="/mywishlist">
               <Cart />
             </Route>
@@ -96,6 +107,9 @@ export default function App() {
             </Route>
             <Route path="/description/:id">
               <ProductDescription />
+            </Route>
+            <Route path="/edit/:id">
+              <EditProduct />
             </Route>
             <Route path="/">
               <Welcome />
