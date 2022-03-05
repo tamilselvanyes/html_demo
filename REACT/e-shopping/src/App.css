@@ -20,6 +20,14 @@
   transform: scale(1.1);
 }
 
+.product-picture-checkout{
+  height: 200px;
+  width: 150px;
+  object-fit: cover;
+  margin: 10px;
+
+}
+
 .product-name {
   padding: 2px;
   font-size: 24px;
@@ -132,6 +140,18 @@ body {
   
 }
 
+.edit-checkout{
+  display:flex;
+  text-align: center;
+  margin:10px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  
+}
+
+
 form{
   display:flex;
   flex-direction: column;
@@ -145,6 +165,16 @@ form{
 
 }
 
+.checkouttext
+{
+  color: rgb(30, 202, 165);
+  font-family: 'Fira Sans', sans-serif;
+  margin-top:10px;
+  text-transform: uppercase;
+
+
+}
+
 .addtext{
   color: rgb(91, 44, 111 );
   margin-top:10px;
@@ -153,4 +183,12 @@ form{
 
 .buttons{
   display: flex;
+}
+
+.names-checkout{
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap:10px
+
 }

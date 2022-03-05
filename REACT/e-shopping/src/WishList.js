@@ -1,27 +1,34 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import CircularProgress from "@mui/material/CircularProgress";
-import Typography from "@mui/material/Typography";
-import React from "react";
 import { useHistory } from "react-router-dom";
+import Box from "@mui/material/Box";
+import React from "react";
+import { useEffect } from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
+import CircularProgress from "@mui/material/CircularProgress";
+import Typography from "@mui/material/Typography";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
-export function Welcome() {
-  const message = "Welcome back !!😎😍";
+export function WishList() {
+  const message = "Your Wishlist";
   const [products, setProducts] = useState(null);
 
   const API = "https://6209ed5992946600171c55b6.mockapi.io/products";
 
   const getProducts = () => {
+    let cart_products = {};
     fetch(API, {
       method: "GET",
     })
       .then((data) => data.json())
-      .then((final_data) => setProducts(final_data));
+      .then((products) => {
+        cart_products = products.filter(
+          (products) => products.wishlist === true
+        );
+
+        return setProducts(cart_products);
+      });
   };
 
   useEffect(() => {
@@ -31,7 +38,7 @@ export function Welcome() {
   return (
     <div>
       <span>
-        <b>{message}</b>
+        <b style={{ fontSize: "20px" }}>{message}</b>
       </span>
       <div className="product-list-container">
         {console.log(products)}
@@ -48,10 +55,8 @@ export function Welcome() {
     </div>
   );
 }
-
 function ShowProducts({ product }) {
   const history = useHistory();
-  const [wishlist, setWishlist] = useState(product.wishlist);
   const [cartlist, setCartlist] = useState(product.cart);
 
   function OnProductClicked(product) {
@@ -77,24 +82,6 @@ function ShowProducts({ product }) {
     });
   };
 
-  const addToWishlist = (product, wishlist) => {
-    // 1. method must be PUT & pass id
-    // 2. body - JSON data
-    // 3. headers - JSON data
-    // After PUT is complete ->  movie to /home
-    const API = "https://6209ed5992946600171c55b6.mockapi.io/products";
-    console.log("wishlist" + wishlist);
-    product.wishlist = !wishlist;
-    console.log(product);
-
-    fetch(`${API}/${product.id}`, {
-      method: "PUT",
-      body: JSON.stringify(product),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-  };
   return (
     <div className="product-container">
       <div className="product-picture-div">
@@ -123,15 +110,6 @@ function ShowProducts({ product }) {
       </Typography>
       <div className="product-buttons">
         <Button
-          variant="outlined"
-          onClick={() => {
-            wishlist ? setWishlist(false) : setWishlist(true);
-            addToWishlist(product, wishlist);
-          }}
-        >
-          <FavoriteIcon color={wishlist ? "error" : ""} />
-        </Button>
-        <Button
           variant="contained"
           color={cartlist ? "success" : "warning"}
           onClick={() => {
@@ -139,8 +117,9 @@ function ShowProducts({ product }) {
             addToCart(product, cartlist);
           }}
         >
-          <AddShoppingCartIcon color={cartlist ? "error" : ""} />
+          <AddShoppingCartIcon />
         </Button>
+
         <Button
           variant="contained"
           color="success"

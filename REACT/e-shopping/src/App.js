@@ -17,7 +17,9 @@ import { SignIn } from "./SignIn";
 import { ProductDescription } from "./ProductDescription";
 import { AddNewProduct } from "./AddNewProduct";
 import { EditProduct } from "./EditProduct";
-import { useEffect } from "react";
+import { Cart } from "./Cart";
+import { WishList } from "./WishList";
+import { Checkout } from "./Checkout";
 
 export default function App() {
   const history = useHistory();
@@ -99,7 +101,10 @@ export default function App() {
               <AddNewProduct />
             </Route>
             <Route path="/mywishlist">
-              <Cart />
+              <WishList />
+            </Route>
+            <Route path="/checkout/:id">
+              <Checkout />
             </Route>
 
             <Route path="/signin">
@@ -119,22 +124,4 @@ export default function App() {
       </Paper>
     </ThemeProvider>
   );
-}
-
-function Cart() {
-  const message = "This is your cart";
-  const CART_API = "https://fakestoreapi.com/users";
-  const getCart = () => {
-    fetch(CART_API, {
-      method: "GET",
-    })
-      .then((data) => data.json())
-      .then((cart_data) => console.log(cart_data));
-  };
-
-  useEffect(() => {
-    getCart();
-  }, []);
-
-  return <div>{message}</div>;
 }

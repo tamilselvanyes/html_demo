@@ -101,7 +101,7 @@ function EditProductForm({ product }) {
           type="text"
           label="Description"
           id="description"
-          name="descriptiondescription"
+          name="description"
           margin="dense"
           onChange={formik.handleChange}
           value={formik.values.description}

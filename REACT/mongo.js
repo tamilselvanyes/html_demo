@@ -1,3 +1,17 @@
+SQL commands
+To select the entire table
+SELECT * 
+FROM mytable;
+
+To select the specific column
+
+SELECT title FROM movies; --title name of the column
+
+To apply conditions to the result
+
+where year NOT BETWEEN 2000 AND 2010;
+where id = 6 AND year > 2000 AND year < 2011
+
 //mongo
 //use b30wd
 //show dbs
@@ -60,3 +74,96 @@
 //     "trailer": "https://www.youtube.com/embed/NgsQ8mVkN8w"
 //   }
 // ])
+
+db.movies.find({});
+db.movies.find({}).pretty();
+db.movies.find({}, { name: 1, rating: 1 }).sort({ rating: 1 }).pretty();
+
+db.movies.find({
+  rating: {
+    $gt: 8,
+  },
+});
+
+//First part {rating: {$gt:8}} filtering  and
+//Second part options => inclusiong and Exclusion {_id: 0 ,name: 1, rating: 1}
+//You cannot mix inclusion and exclusion but there is an exception for _id only you mix with either inclusion or exclusion
+
+db.movies.find({ rating: { $gt: 8 } }, { _id: 0, name: 1, rating: 1 });
+
+//sorting is an different function like find so use with "." at the end, similarly to all other functions like limit and pretty
+
+db.movies
+  .find({}, { _id: 0, name: 1, rating: 1 })
+  .sort({ rating: -1 })
+  .pretty();
+db.movies
+  .find({}, { _id: 0, name: 1, rating: 1 })
+  .sort({ rating: -1 })
+  .limit(2)
+  .pretty();
+db.movies
+  .find({}, { _id: 0, name: 1, rating: 1, trailer: 1 })
+  .sort({ rating: -1 })
+  .limit(2)
+  .skip(2)
+  .pretty();
+
+
+
+//sorting with two fields when the ratings are same
+
+  db.movies.find({},{_id: 0 ,name: 1, rating: 1}).sort({rating:1, name:1}).pretty()
+
+
+
+  db.orders.insertMany(
+    [
+    { _id: 0, productName: "Steel beam", status: "new", quantity: 10 },
+    { _id: 1, productName: "Steel beam", status: "urgent", quantity: 20 },
+    { _id: 2, productName: "Steel beam", status: "urgent", quantity: 30 },
+    { _id: 3, productName: "Iron rod", status: "new", quantity: 15 },
+    { _id: 4, productName: "Iron rod", status: "urgent", quantity: 50 },
+    { _id: 5, productName: "Iron rod", status: "urgent", quantity: 10 }
+    ])
+
+  db.orders.find({status:"urgent"})
+  db.orders.find({})
+
+
+  // _id is must for grouping // $ is must for getting the values from the db
+  //aggregate is just another function which takes array of objects as a parameter
+  db.orders.aggregate([{$match: {status:"urgent"}},
+  {$group : {
+    _id: "$productName",
+    totalQuantityRequired: {$sum: "$quantity"}
+ }}, 
+ 
+ {$sort: {_id :-1}} 
+
+])
+
+
+db.movies.updateMany({},{$set:{language:"English"}})
+
+db.movies.find({name:{"$nin": ["Jai Bhim", "Baahubali"]}}).pretty()
+
+
+db.movies.updateMany({name:{"$nin": ["Jai Bhim", "Baahubali"]}}, {$set:{language:"English"}})
+
+
+db.movies.updateMany({name:{"$in": ["Jai Bhim"]}}, {$set:{language:"Tamil"}})
+
+db.movies.updateOne({name:"Jai Bhim"}, {$set:{language:"Tamil"}})
+
+
+db.movies.updateOne({name:"Baahubali"}, {$set:{language:"Telugu"}})
+
+
+
+db.movies.find({rating:8,language:"English"},{_id:0,name:1, language:1,rating:1})
+
+
+
+
+

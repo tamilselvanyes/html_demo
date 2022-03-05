@@ -11,15 +11,39 @@ import Divider from "@mui/material/Divider";
 export function ProductDescription() {
   const { id } = useParams();
   const [product, setProduct] = useState({});
-  const [wishlist, setWishlist] = useState(false);
+
+  const addToWishlist = (product, wishlist) => {
+    // 1. method must be PUT & pass id
+    // 2. body - JSON data
+    // 3. headers - JSON data
+    // After PUT is complete ->  movie to /home
+    const API = "https://6209ed5992946600171c55b6.mockapi.io/products";
+    console.log("wishlist" + wishlist);
+    product.wishlist = !wishlist;
+    console.log(product);
+
+    fetch(`${API}/${product.id}`, {
+      method: "PUT",
+      body: JSON.stringify(product),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  };
 
   const API = "https://6209ed5992946600171c55b6.mockapi.io/products";
   useEffect(() => {
     fetch(`${API}/${id}`, { method: "GET" })
       .then((data) => data.json())
-      .then((product) => setProduct(product))
+      .then((product) => {
+        setProduct(product);
+        setWishlist(product.wishlist);
+      })
       .catch((error) => console.log(error));
   }, [id]);
+
+  const [wishlist, setWishlist] = useState(product.wishlist);
+
   return (
     <div>
       {product !== null ? (
@@ -44,6 +68,7 @@ export function ProductDescription() {
                   color={wishlist ? "error" : "info"}
                   onClick={() => {
                     wishlist ? setWishlist(false) : setWishlist(true);
+                    addToWishlist(product, wishlist);
                   }}
                 >
                   <FavoriteIcon />
@@ -79,7 +104,7 @@ export function ProductDescription() {
   );
 }
 function RecommendedProducts({ product }) {
-  const API = "https://fakestoreapi.com/products";
+  const API = "https://6209ed5992946600171c55b6.mockapi.io/products";
   const [recommendedproducts, setRecommendedProducts] = useState(null);
 
   const getRecommendedProducts = () => {
@@ -89,12 +114,15 @@ function RecommendedProducts({ product }) {
     })
       .then((data) => data.json())
       .then((products) => {
+        products.map((products) =>
+          console.log(product.category + products.category)
+        );
         category_products = products.filter(
           (products) =>
             products.category === product.category &&
             products.title !== product.title
         );
-        console.log(product.category + category_products);
+
         return setRecommendedProducts(category_products);
       });
   };
