@@ -192,3 +192,8 @@ form{
   gap:10px
 
 }
+
+.empty-text{
+  text-align: left;
+  font-family: 'Fira Sans', sans-serif;
+}

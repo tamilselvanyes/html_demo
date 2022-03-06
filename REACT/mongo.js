@@ -167,3 +167,30 @@ db.movies.find({rating:8,language:"English"},{_id:0,name:1, language:1,rating:1}
 
 
 
+[
+  {
+    "name": "Tamil Selvan",
+    "email": "tamilselvanyes@gmail.com",
+    "phone": "9894891316",
+    "profilepic":"https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "totalexp":"4",
+    "joiningdata":"12-05-2020",
+    "unreadmail":14,
+    "unreadnotification":17,
+    "salarymonthly": 40000,
+    "salaryannualy": 480000,
+    "taskcompletion": 50,
+    "pendingrequest": 15,
+    "id": "1",
+    "projects": [
+      {"Severe Migration" : 60},
+      {"Sales Tracking" : 40 },
+      {"Customer Database" : 60},
+      {"Payout Details": 80},
+      {"Account Setup": "Complete"}
+
+    ]
+
+
+  }
+]

@@ -41,9 +41,13 @@ export function Cart() {
       <div className="product-list-container">
         {console.log(products)}
         {products !== null ? (
-          products.map((product, index) => (
-            <ShowProducts key={index} product={product} />
-          ))
+          products.length === 0 ? (
+            <ShowEmptyCart />
+          ) : (
+            products.map((product, index) => (
+              <ShowProducts key={index} product={product} />
+            ))
+          )
         ) : (
           <Box sx={{ display: "flex" }}>
             <CircularProgress />
@@ -107,6 +111,14 @@ function ShowProducts({ product }) {
           <DeleteIcon />
         </Button>
       </div>
+    </div>
+  );
+}
+
+function ShowEmptyCart() {
+  return (
+    <div>
+      <p className="empty-text">Your Cart is empty</p>
     </div>
   );
 }
