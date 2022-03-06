@@ -18,8 +18,8 @@ import DragIndicatorTwoToneIcon from "@mui/icons-material/DragIndicatorTwoTone";
 import ConstructionTwoToneIcon from "@mui/icons-material/ConstructionTwoTone";
 import FolderTwoToneIcon from "@mui/icons-material/FolderTwoTone";
 import BarChartTwoToneIcon from "@mui/icons-material/BarChartTwoTone";
-import TableChartTwoToneIcon from "@mui/icons-material/TableChartTwoTone";
 import InsertEmoticonTwoToneIcon from "@mui/icons-material/InsertEmoticonTwoTone";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const drawerWidth = 240;
 
@@ -132,70 +132,72 @@ export function MiniDrawer({ open, setOpen }) {
           </List>
           <Divider />
           <List>
-            <p className="heading-drawer">Interface</p>
+            <p className="heading-drawer">User</p>
             <ListItem
               button
-              onClick={() => setTab("Components")}
-              sx={{ color: tab === "Components" ? "primary.main" : "" }}
+              onClick={() => setTab("Create User")}
+              sx={{ color: tab === "Create User" ? "primary.main" : "" }}
             >
               <ListItemIcon>
                 <DragIndicatorTwoToneIcon
-                  sx={{ color: tab === "Components" ? "primary.main" : "" }}
+                  sx={{ color: tab === "Create User" ? "primary.main" : "" }}
                 />
               </ListItemIcon>
-              <ListItemText primary={"Components"} />
+              <ListItemText primary={"Create User"} />
             </ListItem>
             <ListItem
               button
-              onClick={() => setTab("Utlities")}
-              sx={{ color: tab === "Utlities" ? "primary.main" : "" }}
+              onClick={() => setTab("Edit Profile")}
+              sx={{ color: tab === "Edit Profile" ? "primary.main" : "" }}
             >
               <ListItemIcon>
                 <ConstructionTwoToneIcon
-                  sx={{ color: tab === "Utlities" ? "primary.main" : "" }}
+                  sx={{ color: tab === "Edit Profile" ? "primary.main" : "" }}
                 />
               </ListItemIcon>
-              <ListItemText primary={"Utlities"} />
+              <ListItemText primary={"Edit Profile"} />
             </ListItem>
           </List>
           <Divider />
           <List>
-            <p className="heading-drawer">Addons</p>
+            <p className="heading-drawer">Product</p>
             <ListItem
               button
-              onClick={() => setTab("Pages")}
-              sx={{ color: tab === "Pages" ? "primary.main" : "" }}
+              onClick={() => setTab("Create Product")}
+              sx={{ color: tab === "Create Product" ? "primary.main" : "" }}
             >
               <ListItemIcon>
                 <FolderTwoToneIcon
-                  sx={{ color: tab === "Pages" ? "primary.main" : "" }}
+                  sx={{ color: tab === "Create Product" ? "primary.main" : "" }}
                 />
               </ListItemIcon>
-              <ListItemText primary={"Pages"} />
+              <ListItemText primary={"Create Product"} />
             </ListItem>
             <ListItem
               button
-              onClick={() => setTab("Charts")}
-              sx={{ color: tab === "Charts" ? "primary.main" : "" }}
+              onClick={() => setTab("Edit Product")}
+              sx={{ color: tab === "Edit Product" ? "primary.main" : "" }}
             >
               <ListItemIcon>
                 <BarChartTwoToneIcon
-                  sx={{ color: tab === "Charts" ? "primary.main" : "" }}
+                  sx={{ color: tab === "Edit Product" ? "primary.main" : "" }}
                 />
               </ListItemIcon>
-              <ListItemText primary={"Charts"} />
+              <ListItemText primary={"Edit Product"} />
             </ListItem>
             <ListItem
               button
-              onClick={() => setTab("Tables")}
-              sx={{ color: tab === "Tables" ? "primary.main" : "" }}
+              onClick={() => setTab("Delete Product")}
+              sx={{ color: tab === "Delete Product" ? "primary.main" : "" }}
             >
               <ListItemIcon>
-                <TableChartTwoToneIcon
-                  sx={{ color: tab === "Tables" ? "primary.main" : "" }}
+                <DeleteIcon
+                  sx={{
+                    color: tab === "Delete Product" ? "primary.main" : "error",
+                  }}
                 />
               </ListItemIcon>
-              <ListItemText primary={"Tables"} />
+              <ListItemText primary={"Delete Product"} />
             </ListItem>
           </List>
 

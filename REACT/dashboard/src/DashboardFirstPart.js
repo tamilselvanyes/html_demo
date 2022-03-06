@@ -5,7 +5,7 @@ import LinearProgress from "@mui/material/LinearProgress";
 import ListAltIcon from "@mui/icons-material/ListAlt";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import AssignmentReturnedIcon from "@mui/icons-material/AssignmentReturned";
-import { DashboardChart } from "./options";
+import { DashboardChart } from "./ChartOne";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
