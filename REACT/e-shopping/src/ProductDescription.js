@@ -43,6 +43,7 @@ export function ProductDescription() {
   }, [id]);
 
   const [wishlist, setWishlist] = useState(product.wishlist);
+  const history = useHistory();
 
   return (
     <div>
@@ -82,7 +83,12 @@ export function ProductDescription() {
                   <AddShoppingCartIcon />
                   Add to Cart
                 </Button>
-                <Button sx={{ mt: "5px" }} color="success" variant="contained">
+                <Button
+                  sx={{ mt: "5px" }}
+                  color="success"
+                  variant="contained"
+                  onClick={() => history.push(`/checkout/${product.id}`)}
+                >
                   Check Out/Buy Now
                 </Button>
               </div>

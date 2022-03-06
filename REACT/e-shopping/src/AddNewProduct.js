@@ -56,7 +56,7 @@ export function AddNewProduct() {
 
   return (
     <div className="addnew-movie">
-      <h3 className="addtext">Add your favorite movie</h3>
+      <h3 className="addtext">Add your Product</h3>
 
       <form onSubmit={formik.handleSubmit}>
         <TextField
