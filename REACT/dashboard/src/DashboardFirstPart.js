@@ -212,24 +212,31 @@ function DashboardSummary() {
       <div className="summary-illustration">
         <List>
           <ListItem>
-            <ListItemText style={{ color: "#2E86C1" }} primary="Illustration" />
+            <ListItemText style={{ color: "#2E86C1" }} primary="Profile Info" />
           </ListItem>
         </List>
         <Divider />
-        <img
-          width="300"
-          height="200px"
-          alt="illustration"
-          style={{ margin: "10px" }}
-          src="https://startbootstrap.github.io/startbootstrap-sb-admin-2/img/undraw_posting_photo.svg"
-        ></img>
-
-        <p>
-          Add some quality, svg illustrations to your project courtesy of
-          unDraw, a constantly updated collection of beautiful svg images that
-          you can use completely free and without attribution! <br></br>
-          <a href="https://undraw.co/">Browse Illustrations on unDraw →</a>
-        </p>
+        <div className="user-info">
+          <img
+            className="profile-pic"
+            src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          ></img>
+          <p>
+            Name: <b>S Tamil Selvan</b>
+          </p>
+          <p>
+            email: <b>tamilselvanyes@gmail.com</b>
+          </p>
+          <p>
+            Phone: <b>9894891316</b>{" "}
+          </p>
+          <p>
+            Designation: <b>Full Stack Developer</b>
+          </p>
+          <p>
+            Joining Date: <b>12-05-2020</b>
+          </p>
+        </div>
         <Divider />
       </div>
     </div>

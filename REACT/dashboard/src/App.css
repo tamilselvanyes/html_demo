@@ -101,8 +101,22 @@
 
 .summary-illustration{
 
-  width: "fit-content";
   background-color:white;
   margin: 10px;
 
+}
+
+.user-info{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-pic{
+  width: 50%;
+  margin: 10px;
+}
+
+p{
+  margin-top: -5px ;
 }
