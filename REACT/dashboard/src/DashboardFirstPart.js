@@ -219,6 +219,7 @@ function DashboardSummary() {
         <div className="user-info">
           <img
             className="profile-pic"
+            alt="profile-pic"
             src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           ></img>
           <p>
@@ -228,7 +229,10 @@ function DashboardSummary() {
             email: <b>tamilselvanyes@gmail.com</b>
           </p>
           <p>
-            Phone: <b>9894891316</b>{" "}
+            Phone: <b>+91 9894891316</b>{" "}
+          </p>
+          <p>
+            Country: <b>India</b>{" "}
           </p>
           <p>
             Designation: <b>Full Stack Developer</b>
