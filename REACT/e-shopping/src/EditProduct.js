@@ -62,7 +62,7 @@ function EditProductForm({ product }) {
 
   return (
     <div className="edit-movie">
-      <h3 className="edittext">Edit Movie</h3>
+      <h3 className="edittext">Edit Product</h3>
       <form onSubmit={formik.handleSubmit}>
         <TextField
           type="text"
