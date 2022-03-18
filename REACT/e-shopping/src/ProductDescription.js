@@ -144,7 +144,7 @@ function RecommendedProducts({ product }) {
         ))
       ) : (
         <Box sx={{ display: "flex" }}>
-          <CircularProgress />
+          <CircularProgress sx={{ height: "max-width" }} />
         </Box>
       )}
     </div>

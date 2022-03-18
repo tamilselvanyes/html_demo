@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import React from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { API } from "./global.js";
 
 export const movieValidationSchema = yup.object({
   name: yup.string().required("It will be good if the movie has a name"),
@@ -24,7 +25,7 @@ export const movieValidationSchema = yup.object({
 
 export function AddNewMovie() {
   const history = useHistory();
-  const API = "https://6209ed5992946600171c55b6.mockapi.io/movies";
+  // const API = "https://6209ed5992946600171c55b6.mockapi.io/movies";
   const addMovie = (newmovie) => {
     // 1. method must be POST
     // 2. body - JSON data

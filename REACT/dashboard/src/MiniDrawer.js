@@ -20,6 +20,9 @@ import FolderTwoToneIcon from "@mui/icons-material/FolderTwoTone";
 import BarChartTwoToneIcon from "@mui/icons-material/BarChartTwoTone";
 import InsertEmoticonTwoToneIcon from "@mui/icons-material/InsertEmoticonTwoTone";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { useHistory } from "react-router-dom";
+import { context } from "./App";
+import { useContext } from "react";
 
 const drawerWidth = 240;
 
@@ -79,8 +82,10 @@ const Drawer = styled(MuiDrawer, {
   }),
 }));
 
-export function MiniDrawer({ open, setOpen }) {
+export function MiniDrawer() {
+  const [open, setOpen] = [useContext(context)[4], useContext(context)[5]];
   const [tab, setTab] = React.useState("Dashboard");
+  const history = useHistory();
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -119,7 +124,10 @@ export function MiniDrawer({ open, setOpen }) {
           <List>
             <ListItem
               button
-              onClick={() => setTab("Dashboard")}
+              onClick={() => {
+                setTab("Dashboard");
+                history.push("/dashboard");
+              }}
               sx={{ color: tab === "Dashboard" ? "primary.main" : "" }}
             >
               <ListItemIcon>
@@ -135,7 +143,10 @@ export function MiniDrawer({ open, setOpen }) {
             <p className="heading-drawer">User</p>
             <ListItem
               button
-              onClick={() => setTab("Create User")}
+              onClick={() => {
+                setTab("Create User");
+                history.push("/createuser");
+              }}
               sx={{ color: tab === "Create User" ? "primary.main" : "" }}
             >
               <ListItemIcon>
@@ -147,7 +158,10 @@ export function MiniDrawer({ open, setOpen }) {
             </ListItem>
             <ListItem
               button
-              onClick={() => setTab("Edit Profile")}
+              onClick={() => {
+                setTab("Edit Profile");
+                history.push("/edituser");
+              }}
               sx={{ color: tab === "Edit Profile" ? "primary.main" : "" }}
             >
               <ListItemIcon>
@@ -163,7 +177,10 @@ export function MiniDrawer({ open, setOpen }) {
             <p className="heading-drawer">Product</p>
             <ListItem
               button
-              onClick={() => setTab("Create Product")}
+              onClick={() => {
+                setTab("Dashboard");
+                history.push("/dashboard");
+              }}
               sx={{ color: tab === "Create Product" ? "primary.main" : "" }}
             >
               <ListItemIcon>
@@ -175,7 +192,10 @@ export function MiniDrawer({ open, setOpen }) {
             </ListItem>
             <ListItem
               button
-              onClick={() => setTab("Edit Product")}
+              onClick={() => {
+                setTab("Dashboard");
+                history.push("/dashboard");
+              }}
               sx={{ color: tab === "Edit Product" ? "primary.main" : "" }}
             >
               <ListItemIcon>
@@ -187,7 +207,10 @@ export function MiniDrawer({ open, setOpen }) {
             </ListItem>
             <ListItem
               button
-              onClick={() => setTab("Delete Product")}
+              onClick={() => {
+                setTab("Dashboard");
+                history.push("/dashboard");
+              }}
               sx={{ color: tab === "Delete Product" ? "primary.main" : "" }}
             >
               <ListItemIcon>

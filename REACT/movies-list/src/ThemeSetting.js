@@ -1,17 +1,17 @@
-import {useState} from 'react'; 
-import React from 'react';
+import { useState } from "react";
+import React from "react";
 import { useContext, createContext } from "react";
+import { List } from "./List";
 const context = createContext(null);
 
-export  function ThemeSetting(){
-    
-  
+export function ThemeSetting() {
   const [mode, setMode] = useState("light");
-  const styles = { background: mode === "light" ? "black" : "white",
-  height:"500px",
-  justifyContent:"center",
-  display: "flex"
-};
+  const styles = {
+    background: mode === "light" ? "black" : "white",
+    height: "500px",
+    justifyContent: "center",
+    display: "flex",
+  };
   return (
     <context.Provider value={[mode, setMode]}>
       <div style={styles} className="App">
@@ -21,14 +21,7 @@ export  function ThemeSetting(){
   );
 }
 
-const List = () => (
-  <ul>
-    <ListItem value="Light" />
-    <ListItem value="Dark" />
-  </ul>
-);
-
-const ListItem = ({ value }) => (
+export const ListItem = ({ value }) => (
   <li>
     <Button value={value} />
   </li>
@@ -38,7 +31,7 @@ const Button = ({ value }) => {
   const [mode, setMode] = useContext(context);
   const styles = {
     background: !(mode === "light") ? "black" : "white",
-    color: mode === "light" ? "black" : "white"
+    color: mode === "light" ? "black" : "white",
   };
 
   return (

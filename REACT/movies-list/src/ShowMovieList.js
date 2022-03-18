@@ -6,7 +6,7 @@ import Badge from "@mui/material/Badge";
 import InfoIcon from "@mui/icons-material/Info";
 import { useHistory } from "react-router-dom";
 import EditIcon from "@mui/icons-material/Edit";
-import React from 'react';
+import React from "react";
 
 export function ShowMovieList({
   name,

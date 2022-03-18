@@ -10,8 +10,11 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
+import { context } from "./App";
+import { useContext } from "react";
 
-export function DashboardFirstPart({ open }) {
+export function DashboardFirstPart() {
+  const [open, currentuser] = [useContext(context)[4], useContext(context)[0]];
   return (
     <div
       className="dashboard-panel"
@@ -32,7 +35,7 @@ export function DashboardFirstPart({ open }) {
           <p>
             <span style={{ color: "#8E44AD" }}>EARNINGS (MONTHLY)</span>{" "}
             <br></br>
-            <span>$40,0000</span>
+            <span>${currentuser.salarymonthly}</span>
           </p>
           <DateRangeIcon />
         </div>
@@ -42,7 +45,7 @@ export function DashboardFirstPart({ open }) {
         >
           <p>
             <span style={{ color: "green" }}>EARNINGS (YEARLY)</span> <br></br>
-            <span>$215,0000</span>
+            <span>${currentuser.salaryannualy}</span>
           </p>
           <AttachMoneyIcon />
         </div>
@@ -50,15 +53,13 @@ export function DashboardFirstPart({ open }) {
           style={{ borderLeft: "5px solid #2980B9" }}
           className="flex-container inside"
         >
-          <p>
-            <span style={{ color: "#2980B9" }}>TASK</span> <br></br>
-            <span>
-              50%
-              <Box sx={{ width: "100%", marginLeft: "10px" }}>
-                <LinearProgress variant="determinate" value="50" />
-              </Box>
-            </span>
-          </p>
+          <span style={{ color: "#2980B9" }}>TASK</span> <br></br>
+          <span>
+            50%
+            <Box sx={{ width: "100%", marginLeft: "10px" }}>
+              <LinearProgress variant="determinate" value={50} />
+            </Box>
+          </span>
           <ListAltIcon />
         </div>
         <div
@@ -73,12 +74,12 @@ export function DashboardFirstPart({ open }) {
         </div>
       </div>
       <DashboardChart />
-      <DashboardSummary />
+      <DashboardSummary currentuser={currentuser} />
     </div>
   );
 }
 
-function DashboardSummary() {
+function DashboardSummary({ currentuser }) {
   return (
     <div className="dashboard-summary">
       <div className="summary-project">
@@ -105,7 +106,7 @@ function DashboardSummary() {
                 sx={{ height: "10px", borderRadius: "10px" }}
                 color="primary"
                 variant="determinate"
-                value="20"
+                value={20}
               />
             </Box>
           </ListItem>
@@ -129,7 +130,7 @@ function DashboardSummary() {
                 sx={{ height: "10px", borderRadius: "10px" }}
                 color="secondary"
                 variant="determinate"
-                value="40"
+                value={40}
               />
             </Box>
           </ListItem>
@@ -153,7 +154,7 @@ function DashboardSummary() {
                 sx={{ height: "10px", borderRadius: "10px" }}
                 color="primary"
                 variant="determinate"
-                value="60"
+                value={60}
               />
             </Box>
           </ListItem>
@@ -177,7 +178,7 @@ function DashboardSummary() {
                 sx={{ height: "10px", borderRadius: "10px" }}
                 color="secondary"
                 variant="determinate"
-                value="80"
+                value={80}
               />
             </Box>
           </ListItem>
@@ -201,7 +202,7 @@ function DashboardSummary() {
                 sx={{ height: "10px", borderRadius: "10px" }}
                 color="primary"
                 variant="determinate"
-                value="100"
+                value={100}
               />
             </Box>
           </ListItem>
@@ -220,16 +221,16 @@ function DashboardSummary() {
           <img
             className="profile-pic"
             alt="profile-pic"
-            src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            src={currentuser.profilepic}
           ></img>
           <p>
-            Name: <b>S Tamil Selvan</b>
+            Name: <b>{currentuser.name}</b>
           </p>
           <p>
-            email: <b>tamilselvanyes@gmail.com</b>
+            email: <b>{currentuser.email}</b>
           </p>
           <p>
-            Phone: <b>+91 9894891316</b>{" "}
+            Phone: <b>+91 {currentuser.phone}</b>{" "}
           </p>
           <p>
             Country: <b>India</b>{" "}
@@ -238,7 +239,7 @@ function DashboardSummary() {
             Designation: <b>Full Stack Developer</b>
           </p>
           <p>
-            Joining Date: <b>12-05-2020</b>
+            Joining Date: <b>{currentuser.joiningdate}</b>
           </p>
         </div>
         <Divider />
