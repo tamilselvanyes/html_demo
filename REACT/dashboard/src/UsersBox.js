@@ -5,10 +5,11 @@ import { useContext } from "react";
 import { context } from "./App";
 
 export function UsersBox() {
-  const [open, user, setCurrentUser] = [
+  const [open, user, setCurrentUser, currentuser] = [
     useContext(context)[4],
     useContext(context)[2],
     useContext(context)[1],
+    useContext(context)[0],
   ];
 
   const usernames = [];
@@ -22,10 +23,11 @@ export function UsersBox() {
     <Autocomplete
       disablePortal
       id="combo-box-demo"
+      value={currentuser.name}
       options={usernames}
-      defaultValue={usernames[0]}
       onChange={(event, value) => {
         if (user !== null) {
+          console.log("This is the problem" + value);
           const newUser = user.filter((item) => item.name === value);
           if (newUser[0] !== undefined) {
             setCurrentUser(newUser[0]);

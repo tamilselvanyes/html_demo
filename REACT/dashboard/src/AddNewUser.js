@@ -25,7 +25,12 @@ export const userValidationSchema = yup.object({
 });
 
 export function AddNewUser() {
-  const [open] = [useContext(context)[4]];
+  const [open, listupdated, setListupdated, setCurrentUser] = [
+    useContext(context)[4],
+    useContext(context)[6],
+    useContext(context)[7],
+    useContext(context)[1],
+  ];
   const history = useHistory();
   const addUser = (newuser) => {
     // 1. method must be POST
@@ -40,7 +45,11 @@ export function AddNewUser() {
       headers: {
         "content-type": "application/json",
       },
-    }).then(() => history.push("/dashboard"));
+    }).then(() => {
+      setCurrentUser(null);
+      setListupdated(!listupdated);
+      history.push("/dashboard");
+    });
   };
 
   const formik = useFormik({

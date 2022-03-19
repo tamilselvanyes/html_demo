@@ -21,6 +21,8 @@ export default function App() {
   const [listupdated, setListupdated] = useState(false);
 
   const getUsers = () => {
+    console.log("This is my msg");
+    console.log(currentuser);
     fetch(API, {
       method: "GET",
     })
@@ -28,7 +30,11 @@ export default function App() {
       .then((final_data) => {
         setUser(final_data);
         if (final_data != null) {
-          setCurrentUser(final_data[0]);
+          if (currentuser === null) {
+            setCurrentUser(final_data[0]);
+          } else {
+            setCurrentUser(final_data[currentuser.id] - 1);
+          }
         }
       });
   };

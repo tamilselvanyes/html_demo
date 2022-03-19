@@ -7,6 +7,7 @@ import { useFormik } from "formik";
 import { API } from "./global.js";
 import { context } from "./App";
 import { useContext } from "react";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 export function EditUser() {
   const [open] = [useContext(context)[4]];
@@ -25,7 +26,12 @@ export function EditUser() {
 }
 
 function EditUserForm() {
-  const [currentuser] = [useContext(context)[0]];
+  const [currentuser, listupdated, setListupdated, setCurrentUser] = [
+    useContext(context)[0],
+    useContext(context)[6],
+    useContext(context)[7],
+    useContext(context)[1],
+  ];
 
   const editUser = (updatedUser) => {
     // 1. method must be PUT & pass id
@@ -38,7 +44,11 @@ function EditUserForm() {
       headers: {
         "Content-Type": "application/json",
       },
-    }).then(() => history.push("/dashboard"));
+    }).then(() => {
+      setCurrentUser(null);
+      setListupdated(!listupdated);
+      history.push("/dashboard");
+    });
   };
 
   const formik = useFormik({
@@ -61,6 +71,13 @@ function EditUserForm() {
   console.log(formik);
 
   const history = useHistory();
+  const deleteUser = (id) => {
+    fetch(`${API}/${id}`, { method: "DELETE" }).then(() => {
+      setCurrentUser(null);
+      setListupdated(!listupdated);
+      history.push("/dashboard");
+    });
+  };
 
   return (
     <div className="addnew-user">
@@ -206,6 +223,15 @@ function EditUserForm() {
           Update user
         </Button>
       </form>
+      <Button
+        variant="outlined"
+        color="error"
+        style={{ marginTop: "10px" }}
+        onClick={() => deleteUser(currentuser.id)}
+      >
+        Delete user
+        <DeleteIcon />
+      </Button>
     </div>
   );
 }

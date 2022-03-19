@@ -79,7 +79,8 @@ export function DashboardFirstPart() {
   );
 }
 
-function DashboardSummary({ currentuser }) {
+function DashboardSummary() {
+  const [currentuser] = [useContext(context)[0]];
   console.log(currentuser);
   return (
     <div className="dashboard-summary">
@@ -240,6 +241,9 @@ function DashboardSummary({ currentuser }) {
           </p>
           <p>
             Joining Date: <b>{currentuser.joiningdate}</b>
+          </p>
+          <p>
+            Total Experience: <b>{currentuser.totalexp} years</b>
           </p>
         </div>
         <Divider />
