@@ -80,6 +80,7 @@ export function DashboardFirstPart() {
 }
 
 function DashboardSummary({ currentuser }) {
+  console.log(currentuser);
   return (
     <div className="dashboard-summary">
       <div className="summary-project">
@@ -209,7 +210,6 @@ function DashboardSummary({ currentuser }) {
         </List>
         <Divider />
       </div>
-
       <div className="summary-illustration">
         <List>
           <ListItem>
@@ -233,10 +233,10 @@ function DashboardSummary({ currentuser }) {
             Phone: <b>+91 {currentuser.phone}</b>{" "}
           </p>
           <p>
-            Country: <b>India</b>{" "}
+            Country: <b>{currentuser.country}</b>{" "}
           </p>
           <p>
-            Designation: <b>Full Stack Developer</b>
+            Designation: <b>{currentuser.designation}</b>
           </p>
           <p>
             Joining Date: <b>{currentuser.joiningdate}</b>

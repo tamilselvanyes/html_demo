@@ -5,6 +5,7 @@ import { DashboardFirstPart } from "./DashboardFirstPart";
 import { NotFound } from "./NotFound";
 import { Switch, Route } from "react-router-dom";
 import { AddNewUser } from "./AddNewUser";
+import { EditUser } from "./EditUser";
 import { API } from "./global";
 import { useEffect, useState } from "react";
 import { createContext } from "react";
@@ -17,6 +18,8 @@ export default function App() {
   const [open, setOpen] = React.useState(false);
   const [user, setUser] = useState(null);
   const [currentuser, setCurrentUser] = useState(null);
+  const [listupdated, setListupdated] = useState(false);
+
   const getUsers = () => {
     fetch(API, {
       method: "GET",
@@ -32,11 +35,20 @@ export default function App() {
 
   useEffect(() => {
     getUsers();
-  }, []);
+  }, [listupdated]);
 
   return (
     <context.Provider
-      value={[currentuser, setCurrentUser, user, setUser, open, setOpen]}
+      value={[
+        currentuser,
+        setCurrentUser,
+        user,
+        setUser,
+        open,
+        setOpen,
+        listupdated,
+        setListupdated,
+      ]}
     >
       <div className="App">
         <Switch>
@@ -61,8 +73,29 @@ export default function App() {
             )}
           </Route>
           <Route path="/createuser">
-            <AddNewUser />
+            <MiniDrawer />
+            {user !== null && currentuser != null ? (
+              <AddNewUser />
+            ) : (
+              <Box sx={{ textAlign: "center" }}>
+                <CircularProgress size={100} sx={{ margin: "40px" }} />
+              </Box>
+            )}
           </Route>
+          {currentuser !== null ? (
+            <Route path="/edituser">
+              <MiniDrawer />
+              {user !== null && currentuser != null ? (
+                <EditUser />
+              ) : (
+                <Box sx={{ textAlign: "center" }}>
+                  <CircularProgress size={100} sx={{ margin: "40px" }} />
+                </Box>
+              )}
+            </Route>
+          ) : (
+            ""
+          )}
 
           <Route path="**">
             <NotFound />

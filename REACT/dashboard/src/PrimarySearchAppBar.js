@@ -16,8 +16,7 @@ import { context } from "./App";
 import { useContext } from "react";
 
 export function PrimarySearchAppBar() {
-  const [currentuser] = useContext(context);
-  console.log("currentuser==" + currentuser);
+  const [currentuser] = [useContext(context)[0]];
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -152,7 +151,11 @@ export function PrimarySearchAppBar() {
               color="inherit"
               margin="10px"
             >
-              <Typography>Tamil Selvan</Typography>
+              {currentuser !== null ? (
+                <Typography> {currentuser.name}</Typography>
+              ) : (
+                ""
+              )}
               <AccountCircle />
             </IconButton>
           </Box>

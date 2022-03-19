@@ -5,9 +5,8 @@ import { useContext } from "react";
 import { context } from "./App";
 
 export function UsersBox() {
-  const [open, currentuser, user, setCurrentUser] = [
+  const [open, user, setCurrentUser] = [
     useContext(context)[4],
-    useContext(context)[0],
     useContext(context)[2],
     useContext(context)[1],
   ];
@@ -25,9 +24,14 @@ export function UsersBox() {
       id="combo-box-demo"
       options={usernames}
       defaultValue={usernames[0]}
-      onChange={(event, value) =>
-        console.log("This guy is the new user" + value)
-      }
+      onChange={(event, value) => {
+        if (user !== null) {
+          const newUser = user.filter((item) => item.name === value);
+          if (newUser[0] !== undefined) {
+            setCurrentUser(newUser[0]);
+          }
+        }
+      }}
       sx={{
         width: 300,
         margin: "12px",
