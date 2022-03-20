@@ -55,6 +55,7 @@ export function Welcome() {
         ) : (
           <Box sx={{ display: "flex" }}>
             <CircularProgress />
+            <p>Loading is longer because of mockapi...</p>
           </Box>
         )}
       </div>

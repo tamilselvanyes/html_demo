@@ -68,6 +68,7 @@ export default function App() {
             ) : (
               <Box sx={{ textAlign: "center" }}>
                 <CircularProgress size={100} sx={{ margin: "40px" }} />
+                <p>Loading is longer because of mockapi...</p>
               </Box>
             )}
           </Route>
@@ -78,6 +79,7 @@ export default function App() {
             ) : (
               <Box sx={{ textAlign: "center" }}>
                 <CircularProgress size={100} sx={{ margin: "40px" }} />
+                <p>Loading is longer because of mockapi...</p>
               </Box>
             )}
           </Route>
@@ -88,6 +90,7 @@ export default function App() {
             ) : (
               <Box sx={{ textAlign: "center" }}>
                 <CircularProgress size={100} sx={{ margin: "40px" }} />
+                <p>Loading is longer because of mockapi...</p>
               </Box>
             )}
           </Route>
@@ -99,6 +102,7 @@ export default function App() {
               ) : (
                 <Box sx={{ textAlign: "center" }}>
                   <CircularProgress size={100} sx={{ margin: "40px" }} />
+                  <p>Loading is longer because of mockapi...</p>
                 </Box>
               )}
             </Route>
