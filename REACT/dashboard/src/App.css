@@ -132,3 +132,53 @@ form {
   display: flex;
   flex-direction: column;
 }
+
+.product-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin: 24px;
+}
+.product-container {
+  background-color: white;
+  width: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: rgb(0 0 0 / 24%) 1px 2px 13px;
+}
+
+.product-picture {
+  height: 340px;
+  width: 300px;
+  object-fit: cover;
+  margin: 10px;
+}
+.product-picture-div :hover {
+  transform: scale(1.1);
+}
+
+.product-picture-checkout {
+  height: 200px;
+  width: 150px;
+  object-fit: cover;
+  margin: 10px;
+}
+
+.product-name {
+  padding: 2px;
+  font-size: 24px;
+  color: #85929e;
+
+  /* font-weight: bold; */
+}
+.product-name-div :hover {
+  transform: scale(1.05);
+}
+
+.product-buttons {
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}

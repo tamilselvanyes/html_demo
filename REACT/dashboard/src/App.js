@@ -5,7 +5,10 @@ import { DashboardFirstPart } from "./DashboardFirstPart";
 import { NotFound } from "./NotFound";
 import { Switch, Route } from "react-router-dom";
 import { AddNewUser } from "./AddNewUser";
+import { AddNewProduct } from "./AddNewProduct";
+import { Welcome } from "./Welcome";
 import { EditUser } from "./EditUser";
+import { EditProduct } from "./EditProduct";
 import { API } from "./global";
 import { useEffect, useState } from "react";
 import { createContext } from "react";
@@ -102,6 +105,21 @@ export default function App() {
           ) : (
             ""
           )}
+
+          <Route path="/showproducts">
+            <MiniDrawer />
+            <Welcome />
+          </Route>
+
+          <Route path="/addnewproduct">
+            <MiniDrawer />
+            <AddNewProduct />
+          </Route>
+
+          <Route path="/edit/:id">
+            <MiniDrawer />
+            <EditProduct />
+          </Route>
 
           <Route path="**">
             <NotFound />

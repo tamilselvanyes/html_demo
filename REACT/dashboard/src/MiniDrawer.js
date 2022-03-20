@@ -19,7 +19,6 @@ import ConstructionTwoToneIcon from "@mui/icons-material/ConstructionTwoTone";
 import FolderTwoToneIcon from "@mui/icons-material/FolderTwoTone";
 import BarChartTwoToneIcon from "@mui/icons-material/BarChartTwoTone";
 import InsertEmoticonTwoToneIcon from "@mui/icons-material/InsertEmoticonTwoTone";
-import DeleteIcon from "@mui/icons-material/Delete";
 import { useHistory } from "react-router-dom";
 import { context } from "./App";
 import { useContext } from "react";
@@ -178,49 +177,32 @@ export function MiniDrawer() {
             <ListItem
               button
               onClick={() => {
-                setTab("Dashboard");
-                history.push("/dashboard");
+                setTab("Show Product");
+                history.push("/showproducts");
+              }}
+              sx={{ color: tab === "Show Product" ? "primary.main" : "" }}
+            >
+              <ListItemIcon>
+                <FolderTwoToneIcon
+                  sx={{ color: tab === "Show Product" ? "primary.main" : "" }}
+                />
+              </ListItemIcon>
+              <ListItemText primary={"Show Product"} />
+            </ListItem>
+            <ListItem
+              button
+              onClick={() => {
+                setTab("Create Product");
+                history.push("/addnewproduct");
               }}
               sx={{ color: tab === "Create Product" ? "primary.main" : "" }}
             >
               <ListItemIcon>
-                <FolderTwoToneIcon
+                <BarChartTwoToneIcon
                   sx={{ color: tab === "Create Product" ? "primary.main" : "" }}
                 />
               </ListItemIcon>
               <ListItemText primary={"Create Product"} />
-            </ListItem>
-            <ListItem
-              button
-              onClick={() => {
-                setTab("Dashboard");
-                history.push("/dashboard");
-              }}
-              sx={{ color: tab === "Edit Product" ? "primary.main" : "" }}
-            >
-              <ListItemIcon>
-                <BarChartTwoToneIcon
-                  sx={{ color: tab === "Edit Product" ? "primary.main" : "" }}
-                />
-              </ListItemIcon>
-              <ListItemText primary={"Edit Product"} />
-            </ListItem>
-            <ListItem
-              button
-              onClick={() => {
-                setTab("Dashboard");
-                history.push("/dashboard");
-              }}
-              sx={{ color: tab === "Delete Product" ? "primary.main" : "" }}
-            >
-              <ListItemIcon>
-                <DeleteIcon
-                  sx={{
-                    color: tab === "Delete Product" ? "primary.main" : "error",
-                  }}
-                />
-              </ListItemIcon>
-              <ListItemText primary={"Delete Product"} />
             </ListItem>
           </List>
 
