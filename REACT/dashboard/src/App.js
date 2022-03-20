@@ -18,7 +18,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 export const context = createContext(null);
 
 export default function App() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
   const [user, setUser] = useState(null);
   const [currentuser, setCurrentUser] = useState(null);
   const [listupdated, setListupdated] = useState(false);
