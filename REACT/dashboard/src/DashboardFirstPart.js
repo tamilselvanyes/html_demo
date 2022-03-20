@@ -11,6 +11,10 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
 import { context } from "./App";
+import { useHistory } from "react-router-dom";
+import Button from "@mui/material/Button";
+import EditIcon from "@mui/icons-material/Edit";
+
 import { useContext } from "react";
 
 export function DashboardFirstPart() {
@@ -81,6 +85,7 @@ export function DashboardFirstPart() {
 
 function DashboardSummary() {
   const [currentuser] = [useContext(context)[0]];
+  const history = useHistory();
   console.log(currentuser);
   return (
     <div className="dashboard-summary">
@@ -215,6 +220,13 @@ function DashboardSummary() {
         <List>
           <ListItem>
             <ListItemText style={{ color: "#2E86C1" }} primary="Profile Info" />
+            <Button
+              variant="contained"
+              color="secondary"
+              onClick={() => history.push(`/edituser`)}
+            >
+              <EditIcon />
+            </Button>
           </ListItem>
         </List>
         <Divider />

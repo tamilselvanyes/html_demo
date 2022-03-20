@@ -14,6 +14,7 @@ import { useContext } from "react";
 export function Welcome() {
   const message = "All Products";
   const [products, setProducts] = useState(null);
+  const [listupdated, setListupdated] = useState(true);
   const [open] = [useContext(context)[4]];
 
   const getProducts = () => {
@@ -26,7 +27,7 @@ export function Welcome() {
 
   useEffect(() => {
     getProducts();
-  }, []);
+  }, [listupdated]);
 
   return (
     <div style={{ marginTop: "60px", fontSize: "20px", fontWeight: "bold" }}>
@@ -44,7 +45,12 @@ export function Welcome() {
         {console.log(products)}
         {products !== null ? (
           products.map((product, index) => (
-            <ShowProducts key={index} product={product} />
+            <ShowProducts
+              key={index}
+              product={product}
+              listupdated={listupdated}
+              setListupdated={setListupdated}
+            />
           ))
         ) : (
           <Box sx={{ display: "flex" }}>
@@ -56,8 +62,14 @@ export function Welcome() {
   );
 }
 
-function ShowProducts({ product }) {
+function ShowProducts({ product, listupdated, setListupdated }) {
   const history = useHistory();
+  const deleteProduct = (id) => {
+    fetch(`${PRODUCT_API}/${id}`, { method: "DELETE" }).then(() => {
+      setListupdated(!listupdated);
+      console.log("Product deleted");
+    });
+  };
 
   return (
     <div className="product-container">
@@ -89,7 +101,11 @@ function ShowProducts({ product }) {
         >
           <EditIcon />
         </Button>
-        <Button variant="contained" color="error">
+        <Button
+          variant="contained"
+          color="error"
+          onClick={() => deleteProduct(product.id)}
+        >
           <DeleteIcon />
         </Button>
       </div>
