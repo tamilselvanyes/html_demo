@@ -6,8 +6,6 @@ import React from "react";
 import { API } from "./global.js";
 
 export function FavoriteMovies({ value, setvalue }) {
-  // const API =
-  //   "https://6209ed5992946600171c55b6.mockapi.io/movies";
   const getMovies = () => {
     fetch(API, {
       method: "GET",

@@ -9,7 +9,6 @@ import { API } from "./global.js";
 
 export function EditMovie() {
   const { id } = useParams();
-  // const API = "https://6209ed5992946600171c55b6.mockapi.io/movies";
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
@@ -59,7 +58,6 @@ function EditMovieForm({ movie }) {
   });
 
   const history = useHistory();
-  // const API = "https://6209ed5992946600171c55b6.mockapi.io/movies";
 
   return (
     <div className="edit-movie">

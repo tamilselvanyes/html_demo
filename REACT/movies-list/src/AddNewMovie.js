@@ -25,7 +25,6 @@ export const movieValidationSchema = yup.object({
 
 export function AddNewMovie() {
   const history = useHistory();
-  // const API = "https://6209ed5992946600171c55b6.mockapi.io/movies";
   const addMovie = (newmovie) => {
     // 1. method must be POST
     // 2. body - JSON data
