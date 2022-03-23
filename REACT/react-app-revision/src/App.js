@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState, useEffect } from "react";
 
-function App() {
+export default function App() {
+  const API = "http://localhost:4000/mobiles";
+  const [mobiles, setMobiles] = useState(null);
+
+  const getMobiles = () => {
+    fetch(API, {
+      method: "GET",
+    })
+      .then((data) => data.json())
+      .then((mvs) => setMobiles(mvs));
+  };
+  useEffect(() => {
+    getMobiles();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello Welcome</h1>
+      <div className="phone-list-container">
+        {mobiles != null
+          ? mobiles.map((mobile, index) => (
+              <Phone mobile={mobile} key={index} />
+            ))
+          : ""}
+      </div>
     </div>
   );
 }
 
-export default App;
+function Phone({ mobile }) {
+  console.log(mobile.model);
+  return (
+    <div className="phone-container">
+      <img className="phone-picture" src={mobile.img} alt={mobile.model}></img>
+      <h2 className="phone-name">{mobile.model}</h2>
+      <p className="phone-company">{mobile.company}</p>
+    </div>
+  );
+}
