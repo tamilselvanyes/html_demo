@@ -8,6 +8,7 @@
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "B30WD"
+		"liveServer.settings.multiRootWorkspaceName": "B30WD",
+		"editor.formatOnSave": true
 	}
 }
