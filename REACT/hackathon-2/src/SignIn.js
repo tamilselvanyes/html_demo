@@ -3,7 +3,9 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import { Link } from "react-router-dom";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
+import Link from "@mui/material/Link";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
@@ -11,39 +13,20 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useHistory } from "react-router-dom";
-import { API } from "./global";
-import { useState } from "react";
 
 const theme = createTheme();
 
-export function LogIn() {
+export function SignIn() {
   const history = useHistory();
-  const [error, setError] = useState(false);
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     // eslint-disable-next-line no-console
-    const info = {
+    console.log({
       email: data.get("email"),
       password: data.get("password"),
-    };
-    console.log(JSON.stringify(info));
-    fetch(`${API}/login`, {
-      method: "POST",
-      mode: "cors",
-      body: JSON.stringify(info),
-      headers: { "Content-type": "application/json" },
-    })
-      .then((response) => response.json())
-      .then((res) => {
-        console.log(res);
-        if (res.message === "Invalid email or password") {
-          setError(true);
-        } else {
-          setError(false);
-          history.push("/urlshortener");
-        }
-      });
+    });
+    history.push("/");
   };
 
   return (
@@ -80,7 +63,7 @@ export function LogIn() {
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-              Log In
+              Sign in
             </Typography>
             <Box
               component="form"
@@ -106,28 +89,28 @@ export function LogIn() {
                 label="Password"
                 type="password"
                 id="password"
+                autoComplete="current-password"
               />
-              {error ? (
-                <span style={{ color: "red" }}>Invalid email or password</span>
-              ) : (
-                ""
-              )}
+              <FormControlLabel
+                control={<Checkbox value="remember" color="primary" />}
+                label="Remember me"
+              />
               <Button
                 type="submit"
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Log In
+                Sign In
               </Button>
               <Grid container>
                 <Grid item xs>
-                  <Link to="./forgotpassword" variant="body2">
+                  <Link href="#" variant="body2">
                     Forgot password?
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link to="./signup" variant="body2">
+                  <Link href="#" variant="body2">
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>

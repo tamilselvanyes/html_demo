@@ -1,0 +1,210 @@
+.App {
+  text-align: center;
+}
+
+.product-container {
+  background-color: white;
+  width: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: rgb(0 0 0 / 24%) 1px 2px 13px;
+}
+
+.product-picture {
+  height: 340px;
+  width: 300px;
+  object-fit: cover;
+  margin: 10px;
+}
+.product-picture-div :hover {
+  transform: scale(1.1);
+}
+
+.container {
+  margin: center;
+  width: 40%;
+  margin-top: 100px;
+}
+
+.product-picture-checkout {
+  height: 200px;
+  width: 150px;
+  object-fit: cover;
+  margin: 10px;
+}
+
+.product-name {
+  padding: 2px;
+  font-size: 24px;
+  color: #85929e;
+
+  /* font-weight: bold; */
+}
+.product-name-div :hover {
+  transform: scale(1.05);
+}
+
+body {
+  background-color: whitesmoke;
+  font-family: Roboto;
+}
+
+.product-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin: 24px;
+}
+
+.product-buttons {
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.description-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin: 24px;
+}
+
+.product-description {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 800px) {
+  .product-description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+.product-description-picture {
+  height: 500px;
+  width: 350px;
+  object-fit: cover;
+  margin: 10px;
+}
+
+.recommended-products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin: 24px;
+}
+
+.recom-product-picture {
+  height: 350px;
+  width: 250px;
+  object-fit: cover;
+  margin: 10px;
+}
+
+.recom-product-name {
+  padding: 2px;
+  font-size: 14px;
+  color: #85929e;
+}
+
+.product-buttons-description {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.addnew-movie {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 10px;
+}
+
+.edit-movie {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 10px;
+}
+
+.edit-checkout {
+  display: flex;
+  text-align: center;
+  margin: 10px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edittext {
+  color: rgb(91, 44, 111);
+  font-family: "Fira Sans", sans-serif;
+  margin-top: 10px;
+}
+
+.checkouttext {
+  color: rgb(30, 202, 165);
+  font-family: "Fira Sans", sans-serif;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+.addtext {
+  color: rgb(91, 44, 111);
+  margin-top: 10px;
+  font-family: "Fira Sans", sans-serif;
+}
+
+.buttons {
+  display: flex;
+}
+
+.names-checkout {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.empty-text {
+  text-align: left;
+  font-family: "Fira Sans", sans-serif;
+}
+
+form {
+  width: 100%;
+}
+
+.main-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  gap: 10px;
+}
+
+.loading-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.loading-text {
+  font-size: 20px;
+  color: #85929e;
+}

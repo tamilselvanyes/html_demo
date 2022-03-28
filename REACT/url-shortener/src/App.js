@@ -2,6 +2,8 @@ import "./App.css";
 import { Route, Switch } from "react-router-dom";
 import { LogIn } from "./Login";
 import { Signup } from "./Signup";
+import { ForgotPassword } from "./ForgotPassword";
+import { NewPassword } from "./NewPassword";
 
 export default function App() {
   return (
@@ -15,6 +17,12 @@ export default function App() {
         </Route>
         <Route path="/urlshortener">
           <h1>Welcome to URL Shortener</h1>
+        </Route>
+        <Route path="/forgotpassword">
+          <ForgotPassword />
+        </Route>
+        <Route path="/reset-password/:userid/:token">
+          <NewPassword />
         </Route>
 
         <Route exact path="/">
