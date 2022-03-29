@@ -19,7 +19,6 @@ export function Welcome() {
   const PER_PAGE = 18;
 
   const handleChange = (e, p) => {
-    console.log(p);
     setPage(p);
     _DATA.jump(p);
   };
@@ -47,15 +46,17 @@ export function Welcome() {
   } catch (error) {
     console.log(error);
   }
-  console.log(_DATA);
 
   return (
     <div>
       <h2 className="welcome-text">{message}</h2>
-      {console.log(products)}
 
       {products !== null && loading === false ? (
         <div className="main-box">
+          <p className="helper-text">
+            Search for the products you require, For examples: Peanut
+            butter,Hoodies etc
+          </p>
           <AsyncSearchBox
             products={products}
             query={query}
@@ -93,9 +94,7 @@ export function Welcome() {
 }
 
 function ShowProducts({ product }) {
-  function OnProductClicked(product) {
-    console.log(product);
-  }
+  function OnProductClicked(product) {}
 
   return (
     <div className="product-container">
@@ -121,7 +120,8 @@ function ShowProducts({ product }) {
         gutterBottom
         component="div"
       >
-        Original Price: {product.original_price}
+        Original Price:{" "}
+        {product.original_price === "₹undefined" ? "-" : product.original_price}
       </Typography>
       <Typography
         sx={{ fontSize: "28px", color: "#212F3D" }}

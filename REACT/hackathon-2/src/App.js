@@ -21,7 +21,7 @@ import { NewPassword } from "./NewPassword";
 
 export default function App() {
   const history = useHistory();
-  const [mode, setMode] = useState("dark");
+  const [mode, setMode] = useState("light");
   const theme = createTheme({
     palette: {
       mode: mode,

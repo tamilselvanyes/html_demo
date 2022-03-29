@@ -208,3 +208,8 @@ form {
   font-size: 20px;
   color: #85929e;
 }
+
+.helper-text {
+  font-family: Roboto;
+  font-size: 14px;
+}
