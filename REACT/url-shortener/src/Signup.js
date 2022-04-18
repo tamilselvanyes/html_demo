@@ -22,7 +22,6 @@ export function Signup() {
 
   const handleSubmit = (newUser) => {
     // eslint-disable-next-line no-console
-    console.log(newUser);
     const info = newUser;
     fetch(`${API}/signup`, {
       method: "POST",

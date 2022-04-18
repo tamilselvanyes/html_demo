@@ -1,9 +1,48 @@
 .App {
   text-align: center;
+  background-image: url("https://cutewallpaper.org/21/professional-website-backgrounds/Best-49-People-Web-Backgrounds-on-HipWallpaper-Spider-Web-.jpg");
+  background-size: auto;
+  min-height: 100vh;
 }
 
 .container {
   margin: center;
   width: 40%;
   margin-top: 100px;
+}
+
+.urlinfo {
+  margin: auto;
+  font-size: 30px;
+  text-align: center;
+}
+
+.welcome-msg {
+  margin: 50px;
+  color: white;
+  text-align: center;
+}
+
+p {
+  font-size: 20px;
+  text-align: center;
+}
+.userlogin {
+  margin: auto;
+}
+.logintext {
+  margin: 50px;
+}
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+}
+.table-complete {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 100px;
 }
