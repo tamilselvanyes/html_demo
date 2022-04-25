@@ -12,7 +12,7 @@ export function NavigationBar({ user }) {
   const [tab, setTab] = useState("home");
   return (
     <div role="presentation">
-      <Breadcrumbs aria-label="breadcrumb">
+      <Breadcrumbs sx={{ background: "#00ffff" }} aria-label="breadcrumb">
         <Link
           underline="hover"
           sx={{ display: "flex", alignItems: "center", fontSize: "30px" }}

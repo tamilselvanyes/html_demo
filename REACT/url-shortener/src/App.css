@@ -39,10 +39,13 @@ td {
   border: 1px solid black;
   border-collapse: collapse;
   padding: 10px;
+  font-size: 18px;
+  text-align: center;
 }
 .table-complete {
   display: flex;
   justify-content: center;
   align-content: center;
   margin: 100px;
+  text-align: center;
 }

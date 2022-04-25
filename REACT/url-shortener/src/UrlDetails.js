@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { API } from "./global";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import Button from "@mui/material/Button";
+import CircularProgress from "@mui/material/CircularProgress";
 
 export function UrlDetails() {
   const [urlList, setUrlList] = useState(null);
@@ -24,8 +25,8 @@ export function UrlDetails() {
   return (
     <div className="table-complete">
       {urlList ? (
-        <table>
-          <thead>
+        <table class="table table-striped ">
+          <thead class="bg-info">
             <tr>
               <th>S.No</th>
               <th>Url</th>
@@ -40,7 +41,7 @@ export function UrlDetails() {
           </tbody>
         </table>
       ) : (
-        <div>No urls added till now...</div>
+        <CircularProgress className="urlinfo" />
       )}
     </div>
   );
