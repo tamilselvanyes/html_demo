@@ -23,7 +23,6 @@ export function NewPassword() {
     setPasswordmatch(true);
 
     const info = newpassword;
-    console.log(info);
     fetch(`${API}/reset-password-confirmation/${userid}/${token}`, {
       method: "POST",
       body: JSON.stringify(info),
@@ -33,7 +32,6 @@ export function NewPassword() {
     })
       .then((response) => response.json())
       .then((res) => {
-        console.log(res);
         if (res.message === "Password updated successfully") {
           setPasswordUpdated(true);
         }
@@ -74,9 +72,6 @@ export function NewPassword() {
   });
   return (
     <div className="container">
-      {console.log(
-        "passwordupdated" + passwordupdated + "tokenexpired" + tokenexpired
-      )}
       {passwordupdated === false && tokenexpired === false ? (
         <div>
           <h2>Please set your new Password</h2>

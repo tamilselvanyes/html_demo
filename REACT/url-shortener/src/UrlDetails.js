@@ -14,7 +14,6 @@ export function UrlDetails() {
       .then((res) => res.json())
       .then((result) => {
         setUrlList(result);
-        console.log(result);
       });
   };
 

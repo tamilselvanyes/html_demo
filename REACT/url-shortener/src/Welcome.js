@@ -22,7 +22,6 @@ export function Welcome() {
     if (data !== null) {
       let todaycount = 0;
       data.map((item) => {
-        console.log(item);
         const then = new Date(item.createAt);
         const now = new Date();
 
@@ -30,8 +29,6 @@ export function Welcome() {
 
         // 👇️ convert ms to hours                  min  sec   ms
         const hoursBetweenDates = msBetweenDates / (60 * 60 * 1000);
-
-        console.log(hoursBetweenDates);
 
         if (hoursBetweenDates < 24) {
           todaycount = todaycount + 1;
@@ -48,7 +45,6 @@ export function Welcome() {
     if (data !== null) {
       let todaycount = 0;
       data.map((item) => {
-        console.log(item);
         const then = new Date(item.createAt);
         const now = new Date();
 
@@ -56,8 +52,6 @@ export function Welcome() {
 
         // 👇️ convert ms to days                  min  sec   ms
         const DaysBetweenDates = msBetweenDates / (60 * 60 * 1000 * 24);
-
-        console.log(DaysBetweenDates);
 
         if (DaysBetweenDates < 30) {
           todaycount = todaycount + 1;

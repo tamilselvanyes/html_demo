@@ -11,7 +11,6 @@ export function ForgotPassword() {
 
   const [mailsent, Setmailsent] = useState(false);
   const handleSubmit = (email) => {
-    console.log(email);
     fetch(`${API}/reset-password`, {
       method: "POST",
       body: JSON.stringify(email),

@@ -29,7 +29,6 @@ export function LogIn({ setUser, user }) {
       email: data.get("email"),
       password: data.get("password"),
     };
-    console.log(JSON.stringify(info));
     fetch(`${API}/login`, {
       method: "POST",
       mode: "cors",
