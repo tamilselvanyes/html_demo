@@ -18,8 +18,9 @@ body {
   margin: auto;
   background-color: white;
   width: 400px;
-  height: 600px;
+  height: 625px;
   padding: 15px;
+  margin-top: 10px;
 }
 
 a {
@@ -46,4 +47,17 @@ a {
 
 .login-sub {
   margin-top: 40px;
+}
+
+.login-success{
+  text-align: center;
+  margin:auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn{
+  width: max-content;
 }
