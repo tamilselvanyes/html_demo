@@ -107,7 +107,7 @@ export default function App() {
         <header className="bg-dark py-1">
           <div className="container px-4 px-lg-5 my-5">
             <div className="text-center text-white">
-              <span>Connect us @shopperspoint@gmail.com</span>
+              <span>Connect us @shopperspointxxxx@gmail.com</span>
             </div>
           </div>
         </header>
