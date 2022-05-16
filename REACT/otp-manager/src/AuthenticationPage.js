@@ -3,10 +3,11 @@ import * as yup from "yup";
 import { API } from "./global.js";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export function AuthenticationPage() {
+export function AuthenticationPage({ user }) {
   const [mailsent, setMailSent] = useState(false);
+  const [authenticator, setAuthenticator] = useState(null);
   const phoneRegExp =
     /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
@@ -20,14 +21,28 @@ export function AuthenticationPage() {
   });
   const formik = useFormik({
     initialValues: {
-      email: "",
-      phoneNumber: "",
+      email: user,
+      phoneNumber: "+91-",
     },
     validationSchema: InputValidationSchema,
     onSubmit: (input) => {
       submitInput(input);
     },
   });
+
+  function getAuthenticator() {
+    console.log("calling backend");
+    fetch(`${API}/totp-secret`, {
+      method: "POST",
+    })
+      .then((data) => data.json())
+      .then((final_data) => setAuthenticator(final_data));
+  }
+
+  useEffect(() => {
+    console.log("called once");
+    getAuthenticator();
+  }, []);
 
   function submitInput(input) {
     console.log(input);
@@ -47,7 +62,7 @@ export function AuthenticationPage() {
   }
 
   return (
-    <div className="main-div">
+    <div className="login-main">
       <h2>Two Step Authentication</h2>
 
       <form onSubmit={formik.handleSubmit}>
@@ -69,6 +84,7 @@ export function AuthenticationPage() {
           }
         />
         <br></br>
+
         <TextField
           type="text"
           label="Phone Number"
@@ -96,6 +112,11 @@ export function AuthenticationPage() {
           Get OTP
         </Button>
       </form>
+      {authenticator !== null ? (
+        <img src={authenticator.data_url} alt="authentication" />
+      ) : (
+        " "
+      )}
     </div>
   );
 }

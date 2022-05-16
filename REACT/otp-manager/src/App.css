@@ -1,20 +1,66 @@
 body {
   text-align: center;
-  background-color:black;
+  background-color: blueviolet;
   height: 100vh;
   width: 100%;
 }
+
 .App {
   text-align: center;
   margin: auto;
   position: absolute;
-  background-color: white;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 25px;
+
+}
+
+
+.login-main {
+  margin: auto;
+  background-color: beige;
+  width: 400px;
+  height: 625px;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+a {
+  padding: 20px;
+}
+
+.form-group {
+  text-align: left;
+  margin: 20px;
+}
+
+.btn {
+  margin: 10px;
+  width: 70%;
+}
+
+.another-login {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 90%;
+  margin: 16px;
+}
+
+.login-sub {
+  margin-top: 40px;
+}
+
+.login-success{
+  text-align: center;
+  margin:auto;
+  position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
 
-.main-div{
-  margin:30px;
+.btn{
+  width: max-content;
 }
-
