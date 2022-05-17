@@ -14,7 +14,7 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
-export function Login({ user, setUser }) {
+export function Login({ setUser }) {
   const history = useHistory();
   const [error, setError] = useState(false);
   const [errormessage, setErrormessage] = useState("");
@@ -45,8 +45,8 @@ export function Login({ user, setUser }) {
           setError(true);
           setErrormessage(res.message);
         } else {
+          setUser(data.get("email"));
           setError(false);
-          setUser(info.email);
           history.push("/otpauthentication");
         }
       });

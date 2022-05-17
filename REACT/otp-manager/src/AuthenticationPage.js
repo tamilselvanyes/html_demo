@@ -7,22 +7,18 @@ import { useState, useEffect } from "react";
 
 export function AuthenticationPage({ user }) {
   const [mailsent, setMailSent] = useState(false);
+  const disabledClassNameProps = { className: "Mui-disabled" };
   const [authenticator, setAuthenticator] = useState(null);
   const phoneRegExp =
     /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
   const InputValidationSchema = yup.object({
-    email: yup
-      .string()
-      .email("Must be a valid email")
-      .max(255)
-      .required("Email is required"),
     phoneNumber: yup.string().matches(phoneRegExp, "Phone number is not valid"),
   });
   const formik = useFormik({
     initialValues: {
       email: user,
-      phoneNumber: "+91-",
+      phoneNumber: "",
     },
     validationSchema: InputValidationSchema,
     onSubmit: (input) => {
@@ -31,22 +27,28 @@ export function AuthenticationPage({ user }) {
   });
 
   function getAuthenticator() {
-    console.log("calling backend");
-    fetch(`${API}/totp-secret`, {
+    const data = { email: user };
+    console.log(data);
+    fetch(`${API}/otp/totp-secret`, {
       method: "POST",
+      body: JSON.stringify(data),
+      mode: "cors",
+      headers: { "Content-type": "application/json" },
     })
       .then((data) => data.json())
-      .then((final_data) => setAuthenticator(final_data));
+      .then((final_data) => {
+        console.log(final_data);
+        setAuthenticator(final_data);
+      });
   }
 
   useEffect(() => {
-    console.log("called once");
     getAuthenticator();
   }, []);
 
   function submitInput(input) {
     console.log(input);
-    fetch(`${API}/gen-otp`, {
+    fetch(`${API}/otp/gen-otp`, {
       method: "POST",
       body: JSON.stringify(input),
       headers: {
@@ -67,21 +69,16 @@ export function AuthenticationPage({ user }) {
 
       <form onSubmit={formik.handleSubmit}>
         <TextField
+          {...disabledClassNameProps}
           type="text"
           label="E-mail Address"
           id="email"
           name="email"
           margin="dense"
           sx={{ width: "100%" }}
-          onChange={formik.handleChange}
-          value={formik.values.email}
-          onBlur={formik.handleBlur}
-          error={formik.touched.email && formik.errors.email}
-          helperText={
-            formik.touched.email && formik.errors.email
-              ? formik.errors.email
-              : ""
-          }
+          value={user}
+          inputProps={{ readOnly: true }}
+          InputProps={{ ...disabledClassNameProps }}
         />
         <br></br>
 

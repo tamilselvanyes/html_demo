@@ -12,12 +12,13 @@ import { useState } from "react";
 export const theme = createTheme();
 
 export default function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState("Login");
+
   return (
     <div className="App">
       <Switch>
         <Route path="/login">
-          <Login user={user} setUser={setUser} />
+          <Login setUser={setUser} />
         </Route>
         <Route path="/signup">
           <Signup />
