@@ -13,8 +13,11 @@ import { useState } from "react";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import { context } from "./App";
+import { useContext } from "react";
 
-export function Login({ setUser }) {
+export function Login() {
+  const [setUser] = [useContext(context)[1]];
   const history = useHistory();
   const [error, setError] = useState(false);
   const [errormessage, setErrormessage] = useState("");

@@ -4,8 +4,12 @@ import { API } from "./global.js";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useState, useEffect } from "react";
+import { context } from "./App";
+import { useContext } from "react";
 
-export function AuthenticationPage({ user }) {
+export function AuthenticationPage() {
+  const [user] = [useContext(context)[0]];
+
   const [mailsent, setMailSent] = useState(false);
   const disabledClassNameProps = { className: "Mui-disabled" };
   const [authenticator, setAuthenticator] = useState(null);
