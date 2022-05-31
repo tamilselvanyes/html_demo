@@ -1,32 +1,26 @@
 import "./App.css";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  incrementCounter,
-  decrementCounter,
-} from "./redux/actions/updateCounter";
+import { LikeDisLike } from "./LikeDisLike";
 
 export default function App() {
-  const count = useSelector((state) => state.count);
-  console.log(count);
-  const dispatch = useDispatch();
-
   return (
     <div className="App">
-      <div className="button-container">
-        <button
-          className="btn btn-success"
-          onClick={() => dispatch(incrementCounter(count))}
-        >
-          +
-        </button>
-        <button
-          className="btn btn-danger"
-          onClick={() => dispatch(decrementCounter(count))}
-        >
-          -
-        </button>
-      </div>
-      <div style={{ margin: "10px", fontWeight: "bold" }}>Count:{count}</div>
+      <LikeDisLike />
+      <ToDoList />
+    </div>
+  );
+}
+
+function ToDoList() {
+  function handleSubmit(event) {
+    console.log(event.target.value);
+  }
+  return (
+    <div>
+      <h2>To Do List</h2>
+      <form onSubmit={handleSubmit}>
+        <input type="text" placeholder="Enter the task"></input>
+      </form>
+      <button className="btn btn-primary">Add to ToDoList</button>
     </div>
   );
 }
